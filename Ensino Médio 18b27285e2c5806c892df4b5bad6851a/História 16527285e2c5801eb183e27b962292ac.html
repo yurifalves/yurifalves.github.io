@@ -1,0 +1,816 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>História</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="16527285-e2c5-801e-b183-e27b962292ac" class="page sans"><header><img class="page-cover-image" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/axp-photography-Vm3YhMOMk74-unsp.jpg" style="object-position:center 43.87%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">⏳</span></div><h1 class="page-title">História</h1><p class="page-description"></p></header><div class="page-body"><ul id="18b27285-e2c5-8024-93e7-e16c04903ac4" class="toggle"><li><details open=""><summary>Referências</summary><ul id="18b27285-e2c5-8004-9d89-f96caaec4586" class="bulleted-list"><li style="list-style-type:disc"><a href="https://annas-archive.org/search?q=poliedro+historia">História Poliedro (2022)</a><br/>→ a ordem segue mais ou menos a desse livro (História Geral separada da História do Brasil)<br/></li></ul><ul id="18b27285-e2c5-8082-807f-ee5f0c475c80" class="bulleted-list"><li style="list-style-type:disc"><a href="https://annas-archive.org/search?q=Hist%C3%B3ria+Geral+e+do+Brasil">História Geral e do Brasil (2013, 2ª Edição) - Cláudio Vicentino, Gianpolo Dorigo</a><br/>→ melhor livro de história do ensino médio (quase todo o conteúdo veio daqui)<br/></li></ul><p id="18b27285-e2c5-80e9-b32f-ce62882e867b" class="">
+</p></details></li></ul><ul id="17e27285-e2c5-80c9-869b-c17aa29491f4" class="toggle"><li><details open=""><summary>Conceitos complementares</summary><ul id="17627285-e2c5-8010-8347-fe9e77946704" class="toggle"><li><details open=""><summary>O que é história? (INCOMPLETO)</summary><p id="17a27285-e2c5-8057-bcf9-ecdf7263de01" class="">A História possui como especificidade a análise das sociedades humanas através do tempo.</p><p id="17a27285-e2c5-8085-9be1-e24214870308" class="">
+</p></details></li></ul><ul id="17327285-e2c5-80f0-b5a4-f0b9699547c5" class="toggle"><li><details open=""><summary>Períodos históricos (INCOMPLETO)</summary><ul id="17327285-e2c5-8024-aa52-e95a0c7ec99b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Pré-história (c. 2,5 milhões de anos atrás – 4000 a.C.)</strong></mark><ul id="17327285-e2c5-80e7-9781-c9110a8160d2" class="bulleted-list"><li style="list-style-type:circle">Paleolítico ou Idade da Pedra Lascad<mark class="highlight-default"><mark class="highlight-default_background">a</mark></mark></li></ul><ul id="17327285-e2c5-8020-b048-c423d45b3f03" class="bulleted-list"><li style="list-style-type:circle">Neolítico ou Idade da Pedra Polida</li></ul></li></ul><ul id="17327285-e2c5-8033-82c0-ccbf8757e8b9" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>História Antiga (4000 a.C. - 476)</strong></mark><ul id="17a27285-e2c5-8030-89b5-d8770f78a31b" class="bulleted-list"><li style="list-style-type:circle">Antiguidade Oriental</li></ul><ul id="17a27285-e2c5-800a-ab39-c8e187817ec6" class="bulleted-list"><li style="list-style-type:circle">Antiguidade Ocidental ou Antiguidade Clássica</li></ul><ul id="18b27285-e2c5-809b-84f7-cf4ebca6479e" class="bulleted-list"><li style="list-style-type:circle">Outras Antiguidades ()</li></ul></li></ul><ul id="17327285-e2c5-80af-b4e6-cf456f5c7505" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Idade Média (476 - 1453)</strong></mark><ul id="18b27285-e2c5-80bf-905c-ead85e9a51b1" class="bulleted-list"><li style="list-style-type:circle">Idade Média na Europa Ocidental</li></ul><ul id="18b27285-e2c5-80cb-8792-f84e19bd10bf" class="bulleted-list"><li style="list-style-type:circle">Outras Idades Médias (Império Bizantino, Árabes, etc)</li></ul></li></ul><ul id="17327285-e2c5-803a-8f16-eaa1051add29" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Idade Moderna (1453 - 1789)</strong></mark><ul id="18b27285-e2c5-80a2-8f7b-cfbbe6419df4" class="bulleted-list"><li style="list-style-type:circle">blablabla</li></ul></li></ul><ul id="17327285-e2c5-80e3-882d-ccc09b000760" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Idade Contemporânea (1789 - )</strong></mark><ul id="18b27285-e2c5-80ba-8160-fb58997a4f34" class="bulleted-list"><li style="list-style-type:circle">blablabla</li></ul></li></ul><p id="17e27285-e2c5-8029-97a6-c2a64d3d9840" class="">
+</p><h2 id="17327285-e2c5-80cb-b13c-f106fb58ec54" class=""><mark class="highlight-red">Limitações conceituais dessa periodização:</mark></h2><ul id="17327285-e2c5-8019-bc28-e0bd3e5dca2d" class="bulleted-list"><li style="list-style-type:disc">Não existe história neutra ou absoluta. Essa divisão por exemplo, é absolutamente <strong><span style="border-bottom:0.05em solid">eurocêntrica</span></strong> (Europa como parâmetro e modelo para todo o resto do mundo).<br/>Muitos dos eventos a seguir, não são tão relevantes assim para vários outros povos ao redor do globo:<br/><ul id="18b27285-e2c5-803d-9fef-c644bd975985" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple_background">(c. 2,5 milhões de anos atrás) surgimento dos primeiros hominídeos</mark></li></ul><ul id="18b27285-e2c5-80e0-a0c3-edc859dd57f0" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple_background">(10000 a.C.) revolução neolítica</mark></li></ul><ul id="18b27285-e2c5-80d9-986c-ce6669b5519d" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple_background">(4000 a.C.) invenção da escrita</mark></li></ul><ul id="18b27285-e2c5-80ca-ac53-d31ca030dc05" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple_background">(476 a.C.) desagregação do Império Romano do Ocidente</mark></li></ul><ul id="18b27285-e2c5-8031-a630-dc544f474386" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple_background">(1453 a.C.) desagregação do Império Romano do Oriente</mark></li></ul><ul id="18b27285-e2c5-8083-b05e-c619ea1f4ac1" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple_background">(1789 a.C.) Revolução Francesa</mark></li></ul></li></ul><ul id="17327285-e2c5-80f0-a428-f77f558b419e" class="bulleted-list"><li style="list-style-type:disc">A afirmação de que os grupos humanos anteriores ao desenvolvimento da escrita eram “pré-históricos” traz a ideia, equivocada, de que eles não tinham história.</li></ul><p id="17327285-e2c5-8091-aa3e-f571df32db89" class="">
+</p></details></li></ul></details></li></ul><p id="18b27285-e2c5-806f-9c4c-ca52eada44c1" class="">
+</p><h2 id="17227285-e2c5-802d-a486-d7a45f76579a" class=""><mark class="highlight-teal_background">História Geral</mark></h2><ul id="17327285-e2c5-807e-ac7f-c309ce1a7e1c" class="toggle"><li><details open=""><summary>Capítulo 1: Pré-história</summary><ul id="18527285-e2c5-80ec-b40c-c59088cce49b" class="toggle"><li><details open=""><summary>Origens humanas</summary><figure id="18527285-e2c5-80ad-bea2-e5de64f13b1a" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-24_200937.png"><img style="width:623.984375px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-24_200937.png"/></a></figure><p id="18527285-e2c5-8061-95d1-d24011e70439" class="">
+</p></details></li></ul><ul id="17327285-e2c5-80ec-9886-eef705dfa5a9" class="toggle"><li><details open=""><summary>A irradiação do continente africano para outros continentes</summary><figure id="17327285-e2c5-80bf-9a7f-cab3d925c7b5" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Captura_de_tela_2025-01-06_173920.png"><img style="width:623.984375px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Captura_de_tela_2025-01-06_173920.png"/></a></figure><p id="17327285-e2c5-807b-b79a-e2fc87472e79" class="">
+</p><p id="17327285-e2c5-8093-9faf-eecec0087dfb" class="">De acordo com a hipótese mais aceita atualmente, a irradiação da África para as diversas partes do mundo ocorreu, em ordem cronológica:</p><p id="17327285-e2c5-809f-94d6-c2fb74d88e77" class="">África → Oriente Médio → Sudeste da Ásia → Oceania → Europa<br/>→ Nordeste da Ásia -(estreito de Bering)-&gt; América do Norte → América do Sul<br/></p><p id="17e27285-e2c5-80a1-89b4-fc7431f43f89" class=""><span style="border-bottom:0.05em solid">OBS:</span> o Estreito de Bering (que estava seco devido à baixa do nível do mar) foi atravessado durante a última Era Glacial.</p><p id="17e27285-e2c5-800d-90ec-c0e1ba91ffc8" class="">
+</p></details></li></ul><ul id="17327285-e2c5-8081-a241-f1b8e973e26d" class="toggle"><li><details open=""><summary>Paleolítico e Neolítico</summary><figure id="17327285-e2c5-804f-8996-fe35e24d4ae2" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Captura_de_tela_2025-01-06_182845.png"><img style="width:623.96875px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Captura_de_tela_2025-01-06_182845.png"/></a></figure><ul id="17327285-e2c5-806f-a3d2-fa8ebca8633a" class="toggle"><li><details open=""><summary>O período Paleolítico (Idade da Pedra Lascada)</summary><p id="17327285-e2c5-8038-a243-d89cb9d7cf96" class="">Tem início com o aparecimento dos primeiros hominídeos (aprox. 2,5 milhões de anos atrás).</p><p id="18b27285-e2c5-8070-ac67-c4e7bfa63529" class="">
+</p><hr id="18b27285-e2c5-803a-92f7-de306189aec4"/><p id="18b27285-e2c5-8018-9981-c7294c31a72d" class="">
+</p><p id="17327285-e2c5-80b9-9090-c03b539d50f8" class="">Os primeiros grupos humanos do Período Paleolítico viviam em bandos e empregavam grande parte de seu tempo e energia na busca do sustento.</p><p id="18527285-e2c5-801b-892c-e6f5a7bcec77" class="">Todo alimento que consumiam era extraído diretamente da natureza por meio de atividades de coleta, caça e pesca, realizadas com instrumentos fabricados principalmente de lascas de pedra, ossos ou madeira.<br/>→ <br/><mark class="highlight-blue_background"><strong>caçadores-coletores</strong></mark></p><p id="17327285-e2c5-8062-a88f-f736f54b1907" class="">
+</p></details></li></ul><ul id="17327285-e2c5-80f9-8f29-c5f95ec15757" class="toggle"><li><details open=""><summary>O período Neolítico (Idade da Pedra Polida)</summary><p id="18b27285-e2c5-804c-8ee5-fa7b1d61121b" class="">Tem início com a <strong>Revolução Neolítica</strong> ou <strong>Revolução Agrícola</strong> (10000 a.C.).</p><p id="18527285-e2c5-8037-81e6-e4e3c4629ee0" class="">
+</p><hr id="18527285-e2c5-80ba-a33e-c0bb47907304"/><p id="18527285-e2c5-8087-8751-ebe01128e94f" class=""><br/><br/><strong><span style="border-bottom:0.05em solid">Revolução Neolítica ou Revolução Agrícola:</span></strong> transição dos grupos humanos de uma condição de nômades caçadores e coletores para a sedentarização com o desenvolvimento da agricultura e posteriormente a pecuária.<br/>→ a agricultura é aparece primeiro no Oriente Médio e norte da África<br/></p><p id="17727285-e2c5-8090-aaf6-c69d8c319d13" class="">OBS: boas colheitas dependiam da irrigação do solo, por isso era comum que essas comunidades se localizassem perto de rios que tinham fluxo abundante de água, pelo menos durante parte do ano.</p><p id="17327285-e2c5-8045-be75-ecf828549835" class="">
+</p></details></li></ul><p id="17327285-e2c5-805d-835a-e0c0a2cd0193" class="">
+</p></details></li></ul><p id="17327285-e2c5-800c-ad78-d41c53176e87" class="">
+</p></details></li></ul><ul id="17327285-e2c5-8015-8ae8-fd760f204911" class="toggle"><li><details open=""><summary>Capítulo 2: A Antiguidade Oriental</summary><ul id="17a27285-e2c5-80df-bd51-ee3c78cf0407" class="toggle"><li><details open=""><summary>Crescente Fértil</summary><figure id="17a27285-e2c5-8065-8683-deb5f6511100" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Captura_de_tela_2025-01-13_053404.png"><img style="width:623.96875px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Captura_de_tela_2025-01-13_053404.png"/></a></figure><p id="17a27285-e2c5-8067-8578-ebd19ca0641a" class="">A região conhecida como <strong><span style="border-bottom:0.05em solid">Crescente Fértil</span></strong> trata-se de uma região marcada pela existência de vários rios (que ao inundar as margens, tornam as terras próximas a eles propícias para a agricultura com uma camada de húmus), embora localiza da em meio a montanhas e desertos:</p><ul id="17a27285-e2c5-80ef-8bfd-e3b3d0fcff63" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Mesopotâmia (do grego, </strong></mark><em><mark class="highlight-blue_background"><strong>meso</strong></mark></em><mark class="highlight-blue_background"><strong> = meio; </strong></mark><em><mark class="highlight-blue_background"><strong>potamos</strong></mark></em><mark class="highlight-blue_background"><strong> = água)</strong></mark>: situa-se no Oriente Médio, entre os rios Tigre e Eufrates. Por ser uma planícia aberta, invasões ocorriam por todos os lados. Nunca chegou a ser um Estado unificado, como foi o Egito.</li></ul><ul id="17a27285-e2c5-8011-8828-d3a1120000ab" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Egito:</strong></mark> situa-se no norte da África, às margens do rio Nilo, entre dois desertos  (Deserto da Líbia e Deserto da Arábia). Devido ao relativo isolamento geográfico, pode usufruir de longos períodos de estabilidade política.</li></ul><p id="17a27285-e2c5-80b0-8c19-dced41e73ab2" class="">OBS1: O regime de cheias do Tigre e do Eufrates (Mesopotâmia) não é tão regular como o do Nilo (Egito); por isso são frequentes inundações violentas e períodos de seca na região banhada por eles.</p><p id="17a27285-e2c5-8042-9fee-f7c2880179d3" class="">OBS2: Com o crescimento populacional e dos primeiros núcleos urbanos (primeiramente na mesopotâmia e mais tarde no Egito), desenvolveu-se um complexo sistema hidráulico (construção de diques, barragens, canais, sistemas de drenagem, etc).</p><p id="17b27285-e2c5-8005-8da2-f83430b953d7" class="">OBS3: A religião foi muito importante para a manutenção da ordem existente e domínio das classes sociais inferiores pelo Estado.</p><p id="17a27285-e2c5-805e-8565-e87f330d0068" class="">
+</p></details></li></ul><ul id="17a27285-e2c5-80ed-8ea4-d59261398a2e" class="toggle"><li><details open=""><summary>Civilização mesopotâmica</summary><p id="17a27285-e2c5-801e-ab29-d47ea8f08014" class="">Composta de diversas cidades independentes (cidades-templo, inicialmente, e<br/>cidades-reino, posteriormente), a Mesopotâmia ao longo de sua história, foi ocupada por vários povos, formando grandes reinos e quase unificando a região em alguns momentos.<br/></p><p id="17a27285-e2c5-801b-9c88-f477dea7a8a9" class="">sumérios → acádios → babilônicos (amoritas) → assírios → neobabilônicos (caldeus)<br/><br/>Apesar de serem independentes, as cidades mesopotâmicas possuíam uma cultura em comum, a cultura sumério-acadiana (depois herdada pelos povos que viriam a seguir, como babilônicos, assírios, etc..).<br/></p><p id="17a27285-e2c5-805b-8e0d-f0effcc76068" class="">
+</p><p id="17a27285-e2c5-80d6-b86b-c9fc10896e79" class="">Principais Contribuições</p><ul id="17a27285-e2c5-8002-bbf0-dbd129ed14ab" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background"><strong>sumérios:</strong></mark> escrita cuneiforme (escrita mais antiga conhecida, feita com a impressão de um estilete na argila mole), zigurates (templos em forma de pirâmides), <em>epopeia de Gilgamesh</em> (narrativa literária/mitológica mais antiga).</li></ul><ul id="17a27285-e2c5-8053-b29b-f48fd51d566a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background"><strong>babilônicos (Primeiro Império Babilônico):</strong></mark> código de Hamurabi (leis escritas mais antigas conhecidas), baseado na <em>lei de talião</em>.</li></ul><ul id="17e27285-e2c5-80c4-aab5-f2dbf2aa63d3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background"><strong>assírios:</strong></mark> destacaram-se pela organização e cultura militar. Eram extremamente cruéis e brutais com os povos conquistados como uma forma de manter respeito e espalhar o medo entre os outros povos.</li></ul><ul id="17a27285-e2c5-8024-93f7-d7f6b36bbd5f" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-yellow_background"><strong>neobabilônicos (Segundo Império Babilônico):</strong></mark> seguidas conquistas por parte de Nabucodonosor. Caiu para os persas comandadas por Ciro I.</li></ul><p id="17a27285-e2c5-8043-b8b7-fa296cbcb614" class="">
+</p><hr id="17a27285-e2c5-80a8-9f71-e9b658dba186"/><p id="17a27285-e2c5-8087-9d4c-f10ce0196f55" class="">
+</p><p id="17a27285-e2c5-80c1-9926-cd99862fcd18" class=""><strong><span style="border-bottom:0.05em solid">Economia e Sociedade na Mesopotâmia:</span></strong> uma elite (vista como representante dos deuses) controlava a parcela da população submetida ao trabalho compulsório, caracterizando o domínio de todos os grupos sociais por meio de um governo teocrático (templo) e despótico (palácio).</p><p id="17a27285-e2c5-8061-a9f3-f6b484832eb7" class="">
+</p></details></li></ul><ul id="17a27285-e2c5-807b-893b-c122d6c868d5" class="toggle"><li><details open=""><summary>Civilização egípcia</summary><p id="17b27285-e2c5-80c1-9563-e7e15cea6ed4" class="">A organização do trabalho às margens do Nilo, a construção de diques e outras obras foram realizadas inicialmente pelas coletividades locais e regionais conhecidas como <strong><span style="border-bottom:0.05em solid">nomos</span></strong><strong> (cujo governante era chamado nomarca)</strong>.</p><p id="17b27285-e2c5-8064-b9d7-da3794025fa4" class="">As seguidas disputas regionais contribuíram para a fusão dos nomos, originando, por volta de 3500 a.C., dois reinos:</p><ul id="17e27285-e2c5-8000-b47c-e6b2a72a39c7" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Alto Egito</strong></mark> (ao sul)</li></ul><ul id="17e27285-e2c5-80fc-9bc1-e2b193d27829" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Baixo Egito</strong></mark> (ao norte, na região do delta do Nilo)</li></ul><p id="17e27285-e2c5-8062-8243-f47e1c3688b5" class="">Séculos depois, perto de 3200 a.C., deu-se a unificação do Estado egípcio, o <strong><span style="border-bottom:0.05em solid">primeiro reino/império </span></strong><mark class="highlight-default_background"><strong><span style="border-bottom:0.05em solid">unificado</span></strong></mark><strong><span style="border-bottom:0.05em solid"> de que se tem conhecimento na História</span></strong>. Um chefe do Alto Egito (Menés ou Narmer) uniu os dois reinos, subordinando os cerca de quarenta nomos e tornando-se o primeiro faraó, numa monarquia teocrática.</p><p id="18327285-e2c5-804f-8fcc-c106cf11cd19" class="">
+</p><p id="17b27285-e2c5-80fa-a4c2-e6b0166155ab" class=""> A história política do Egito faraônico é dividida em:</p><ul id="17b27285-e2c5-809d-9cc4-d7e5c92485e3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Antigo Império (2575 a.C. - 2134 a.C.):</strong></mark> período no qual ocorreu o auge do culto ao deus Rá (deus sol) e da divinização do faraó (encarnação do deus Hórus). A capital era Mênfis e houve a contrução das pirâmides de Queops, Quéfren e Miquerinos.<br/>→ crise: O reino antigo entrou em crise devido a invasões estrangeiras e conflitos entre o faraó, os nomarcas e os sacerdotes.<br/></li></ul><ul id="17b27285-e2c5-80f0-94d0-f808c95b1da3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Médio Império (2040 a.C. - 1640 a.C.):</strong></mark> período em que o faraó retoma seu lugar de poder.<br/>→ crise: guerras contra os hicsos (grupo misto semita-asiático).<br/></li></ul><ul id="17b27285-e2c5-8014-b8ef-e8968518bd47" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Novo Império (1550 a.C. - 1070 a.C.):</strong></mark> inicia-se com a expulsão dos hicsos. Foi nessa época que viveram os faraós Amenófis IV (ou “Akhenaton”, que promoveu o culto monoteísta ao deus Aton), Hatshepsut e Ramsés II.<br/>→ crise: o faraó, enfraquecido, dividiu seu poder com o alto sacerdote de Amon e com o vice-rei da Núbia.<br/></li></ul><p id="17b27285-e2c5-80b6-a5c4-d40f639ee534" class="">Após isso em 525 a.C., persas → macedônicos → romanos → … (fim do período antigo)</p><p id="17b27285-e2c5-80f3-bc7a-ea9a1456bd3e" class="">
+</p><hr id="17b27285-e2c5-80b1-8b93-ef661bb8e2e4"/><p id="17e27285-e2c5-802a-8531-d89855fcf8cc" class="">
+</p><p id="17e27285-e2c5-801c-ba82-d7091f75ec83" class=""><strong><span style="border-bottom:0.05em solid">Formas da escrita egípcia:</span></strong></p><ul id="17e27285-e2c5-8015-b557-f1dbd826e891" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>hieroglífica (elite, clero e escribas):</strong></mark> considerada sagrada, mais antiga.</li></ul><ul id="17e27285-e2c5-8015-b5b7-f7391db5401e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>hierática:</strong></mark> uma simplificação da hieroglífica.</li></ul><ul id="17e27285-e2c5-8074-8c35-e5f5a1f6d9b4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>demótica (mais popular):</strong></mark> uma simplificação da hierática.</li></ul><p id="17b27285-e2c5-8071-8aca-eacdfe96d0a0" class="">
+</p><p id="17b27285-e2c5-80fa-950d-c822d4246286" class=""><strong><span style="border-bottom:0.05em solid">Economia e Sociedade na civilização egípcia:</span></strong> A economia egípcia apoiava-se na servidão coletiva, na qual os camponeses eram obrigados a construir templos, palácios, obras de irrigação, etc. O Egito era grande produtor de cereais, em especial trigo, e de algodão, linho e papiro.</p><figure id="17b27285-e2c5-80b2-8672-d8dcf491c202" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/b1037e3e3cc6fb823855046a9d8119dc.jpg"><img style="width:623.984375px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/b1037e3e3cc6fb823855046a9d8119dc.jpg"/></a><figcaption><mark class="highlight-red_background"><strong>Elevadíssima Hierarquização/Estratificação Social</strong></mark></figcaption></figure><p id="17e27285-e2c5-80d9-b5df-d8031adb424c" class="">
+</p></details></li></ul><ul id="17a27285-e2c5-8021-8284-cf4e6427f3b0" class="toggle"><li><details open=""><summary>Civilização dos hebreus, fenícios e persas</summary><p id="17e27285-e2c5-80e2-ae01-c457f6610b30" class="">Na região do Crescente Fértil, as ricas terras encontradas nas margens dos grandes rios (Nilo, Tigre e Eufrates) possibilitaram não apenas o desenvolvimento das civilizações egípcia e mesopotâmica, mas também o de povos vizinhos (hebreus, fenícios e persas), que, de alguma maneira e em algum momento, aproveitaram-se da riqueza daquelas. </p><ul id="17e27285-e2c5-8088-9b68-ef797d8f534c" class="toggle"><li><details open=""><summary>Os hebreus</summary><figure id="17e27285-e2c5-8054-94bf-c907a419b7b3" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-17_073809.png"><img style="width:363px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-17_073809.png"/></a></figure><p id="17e27285-e2c5-8096-8201-d19396944766" class="">O povo hebreu estabeleceu-se na Palestina, às margens do rio Jordão.</p><p id="17e27285-e2c5-8083-a535-cf3030e3953a" class="">Praticou a agricultura e o pastoreio, embora com grandes dificuldades, por causa do clima seco. Os primeiros hebreus que ocuparam a região, por volta de 2000 a.C., tinham origem semita, como os cananeus, que já eram habitantes da região mas foram derrotados pelas tribos hebraicas.</p><p id="18327285-e2c5-803f-9fe5-f3d74c5ec0f4" class="">
+</p><hr id="18327285-e2c5-801f-8119-c2423b229836"/><p id="18327285-e2c5-8058-b37a-fc3a904b43e1" class="">
+</p><p id="17e27285-e2c5-80f6-885b-f388044e569a" class=""><span style="border-bottom:0.05em solid">Miotlogia:</span> A presença dos hebreus no Egito e o Êxodo (entre muitas outras coisas) não são confirmados por outras fontes que não a própria Bíblia. Além disso, têm uma cronologia bastante duvidosa, seja pelas várias indicações bíblicas contraditórias, seja pela sua confrontação com outras fontes históricas.</p><p id="17e27285-e2c5-801e-ad58-d949258d3890" class="">
+</p></details></li></ul><ul id="17e27285-e2c5-808a-9261-f470b84893b9" class="toggle"><li><details open=""><summary>Os fenícios</summary><p id="17e27285-e2c5-80ea-98b6-d5d2ce6bb89d" class="">A Fenícia situava-se no litoral da Síria, no norte da Palestina (onde se localiza atualmente o Líbano). Foi ocupada antes de 3000 a.C. por povos semitas que destacaram-se no comércio marítimo (estimulado pela possibilidade de adquirir excedentes agrícolas do Egito).</p><p id="17e27285-e2c5-809e-a829-d5443ae44c21" class="">Na Fenícia, as cidades-Estado eram chefiadas pela elite mercantil e proprietária das embarcações, constituindo uma <em><mark class="highlight-blue_background"><strong>talassocracia</strong></mark></em> (do grego, <em><strong>thálassa</strong></em> = “mar”;<br/><br/><em><strong>kratía</strong></em> = “força”, “poder”).</p><p id="17e27285-e2c5-807e-9b89-f055822801c4" class="">
+</p><figure id="17e27285-e2c5-80e2-8b01-f202b3dee52f" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-17_074849.png"><img style="width:595.984375px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-17_074849.png"/></a></figure><p id="17e27285-e2c5-807e-abd7-f84867431ed2" class=""><strong><span style="border-bottom:0.05em solid">Comércio marítimo:</span></strong> estabeleceram rotas mercantis por todo o Mediterrâneo e até no litoral Atlântico do norte da África, instalando em várias regiões, importantes entrepostos comerciais (como Cartago, no norte da África).</p><p id="19427285-e2c5-80a8-ba1c-ef61500af0d6" class="">
+</p><hr id="19427285-e2c5-80e5-a8a8-d599dda40446"/><p id="17e27285-e2c5-80b7-b2a7-ebb07970da5f" class="">
+</p><p id="17e27285-e2c5-8003-84eb-ea6984461110" class=""><strong><span style="border-bottom:0.05em solid">Criação do primeiro alfabeto:</span></strong> no contato com vários povos (propiciado pelas relações mercantis), os fenícios conheceram várias culturas e suas artes, técnicas e descobertas. Com isso, deram contribuições originais à humanidade, sendo a principal delas um alfabeto fonético simplificado (composto de 22 letras), que, incorporado pelos gregos e romanos, serviu de base para o alfabeto ocidental atual.</p><p id="17e27285-e2c5-80dc-8631-f4dc611f1c84" class="">
+</p></details></li></ul><ul id="17e27285-e2c5-8018-8333-e6d4216cbc53" class="toggle"><li><details open=""><summary>Os persas</summary><p id="17e27285-e2c5-8078-8af9-d2ab2f66574c" class="">Os povos que ocupavam o planalto iraniano (ocupado desde o sexto milênio antes da Era Cristã, e por volta de 2000 a.C. recebeu populações indo-europeias), região chamada pelos gregos de <em><strong>persis</strong></em> ou <em><strong>parsa</strong></em>, usualmente denominada Pérsia, produziram uma civilização responsável por um dos maiores impérios do mundo antigo.</p><p id="17e27285-e2c5-8041-ac8d-cb452a92d659" class="">O território foi unificado por Ciro I (559 a.C.-529 a.C.), rei persa que submeteu os povos vizinhos, <strong>os medos</strong>. Procurando expandir seus domínios, os persas invadiram a Mesopotâmia, o Egito, a Palestina e a Fenícia e chegaram à Ásia Menor e à Índia.</p><p id="17e27285-e2c5-8022-8caa-c57dc21c20a3" class="">
+</p><figure id="17e27285-e2c5-801a-a581-d93d47a4c66f" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-17_080117.png"><img style="width:595.984375px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-17_080117.png"/></a></figure><ul id="17e27285-e2c5-80c6-85f2-dc8a831dc3ce" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Ciro I:</strong></mark> o principal conquistador, foi bastante hábil ao se aliar às elites locais dos territórios conquistados, em vez de simplesmente submetê-las ao seu domínio.</li></ul><ul id="17e27285-e2c5-80c9-9d6c-cf75671fa6ac" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Cambises II:</strong></mark> contrariando as regras de tolerância de seu pai, dá início a um período de centralização autoritária e de submissão dos povos conquistados.<br/>→ ataca o Egito e conquista o vale do Nilo após a vitória na Batalha de<br/>Pelusa (525 a.C.).<br/></li></ul><ul id="17e27285-e2c5-8042-b970-d1bfb3c834a5" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Dario I:</strong></mark> dividiu o império em províncias (as <em>satrápias</em>). Os sátrapas eram encarregados de cobrar impostos em nome do imperador e eram fiscalizados, por sua vez, por inspetores oficiais (”olhos e ouvidos do rei”).<br/>→ continuação do expansionismo persa e com isso as Guerras Médicas<br/></li></ul><ul id="19427285-e2c5-801f-88f1-f18ba005202a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Xerxes I:</strong></mark> continuou a guerra contra as <em>pólis</em> gregas iniciada por seu pai (Dario I)<br/>→ derrota nas Guerras Médicas e desagregação do Império Persa<br/></li></ul><p id="19427285-e2c5-807b-99dd-c2f4a7693528" class="">
+</p><hr id="19427285-e2c5-8051-865c-e0dc529039eb"/><p id="19427285-e2c5-8002-9b09-c965d79a4eda" class="">
+</p><p id="17e27285-e2c5-80f4-b35e-fbb0e0e4b030" class=""><strong><span style="border-bottom:0.05em solid">Mitologia (Zoroastrismo ou Masdeísmo):</span></strong> estava baseada no livro sagrado <em>Zend-Alvesta</em> (que teria sido escrito pelo personagem lendário Zoroastro ou Zaratustra). Sua mitologia era basicamente dualista, fundada na crença em duas divindades antagônicas principais Ormuz-Mazda (deus do bem/luz) e Arimã (deus do mal/trevas). Em geral, os persas também admitiam a vida após a morte e o advento de um Messias salvador à Terra que libertaria os justos (conceito depois incorporado pela mitologia judaica).</p><p id="19427285-e2c5-8094-8729-e0588f54a323" class="">
+</p></details></li></ul><p id="17e27285-e2c5-8070-b970-de7d20a9fcb6" class="">
+</p></details></li></ul><p id="17727285-e2c5-8034-9489-d57cc474a000" class="">
+</p></details></li></ul><ul id="17327285-e2c5-80dc-b7aa-f049b8d92171" class="toggle"><li><details open=""><summary>Capítulo 3: A Antiguidade Ocidental</summary><ul id="18127285-e2c5-80b7-9a9e-ccbe4ddde8ec" class="toggle"><li><details open=""><summary>Grécia Antiga</summary><p id="18527285-e2c5-80f3-80bb-d8e5857cd9e3" class="">A civilização Grega exerceu muita influência sobre o mundo ocidental:</p><ul id="18527285-e2c5-8081-821f-c386b6649bc0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Democracia (do grego, </strong></mark><em><mark class="highlight-blue_background"><strong>demos</strong></mark></em><mark class="highlight-blue_background"><strong> = “povo”; </strong></mark><em><mark class="highlight-blue_background"><strong>kratia</strong></mark></em><mark class="highlight-blue_background"><strong> = “poder”):</strong></mark> esse sistema, onde participavam cidadãos preparados, conhecedores dos problemas da cidade onde viviam, se consolidou em Atenas, no século VI a.C. Na pólis (do grego, “cidade estado”) a cidade passou a significar mais do que um lugar onde se concentrava o poder de um soberano ou de uma oligarquia, surgindo a noção inicial de comunidade política.</li></ul><ul id="18527285-e2c5-8093-ba53-f3e258268d81" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Filosofia (do grego, </strong></mark><em><mark class="highlight-blue_background"><strong>philos</strong></mark></em><mark class="highlight-blue_background"><strong> = “amor”; </strong></mark><em><mark class="highlight-blue_background"><strong>sophía</strong></mark></em><mark class="highlight-blue_background"><strong> = “sabedoria”):</strong></mark> Sócrates, Platão e Aristóteles são alguns dos filósofos cujas ideias moldaram o pensamento ocidental, especialmente nas áreas de ética, política e lógica.</li></ul><ul id="18527285-e2c5-80af-87be-e73ca2bff298" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Mitologia e Literatura:</strong></mark> Duas epopeias (poemas épicos, voltados para a glória os heroís) se destacam, a <em>Ilíada</em> (Aquiles e guerra de Troia) e a <em>Odisseia</em> (Ulisses e a luta pelo poder em Ítaca) de Homero. Também vale a pena mencionar a tragédia grega, onde se destacam Sófocles, Esquilo e Eurípides.</li></ul><ul id="18527285-e2c5-80b2-9f8d-dd46cb021f2c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Historiografia:</strong></mark> Se destaca Heródoto (”pai da história”), por suas tentativas de narrar os eventos de uma maneira que fosse mais analítica e crítica do que apenas a tradição oral mitológica. Também se destacam Tucídides e Xenofonte (principais registros sobre a guerra do Peloponeso).</li></ul><p id="18527285-e2c5-8064-b4f8-f782dfb8d405" class="">
+</p><hr id="18527285-e2c5-804d-896d-d2ae025a9272"/><p id="18527285-e2c5-80bd-8f90-c7da750f36d5" class="">
+</p><p id="18127285-e2c5-80d6-8440-ec0b37d7435a" class="">Períodos da Grécia Antiga:</p><ul id="18127285-e2c5-80a0-aa7a-c5a5dff01703" class="toggle"><li><details open=""><summary>Período Pré-homérico (séculos XX a.C. - XII a.C.)</summary><figure id="18527285-e2c5-80ba-8d43-fff28d0fa47a" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-24_104541.png"><img style="width:595.984375px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-24_104541.png"/></a></figure><p id="18527285-e2c5-8071-aba1-d16280c2953d" class="">A formação da Grécia compreendeu um conjunto de povos que se desenvolveram nas regiões localizadas ao sul da península Balcânica, nas ilhas do mar Egeu e no litoral da Ásia Menor.<br/>OBS1: Os termos <br/><mark class="highlight-red_background">Grécia/gregos</mark> se originam do latim. Para seus habitantes a nomenclatura era <mark class="highlight-teal_background">Hélade/heleno</mark>.<br/>OBS2: Devido a geografia da região (relevo montanhoso e diversas reentrâncias do mar na parte continental da Grécia, grande quantidade de ilhas, etc.), não houve um território unificado politicamente, mas sim Pólis (cidades-Estado).<br/></p><p id="18527285-e2c5-8056-8d82-cb3a7a78ff0e" class="">
+</p><hr id="18527285-e2c5-808b-beb4-c47de6891efb"/><p id="18527285-e2c5-805c-a7c6-da1679f598e9" class="">
+</p><p id="18527285-e2c5-80f1-b54f-e950435f82ec" class="">Civilizações pré-helênicas que deram origem a civilização grega:</p><ul id="18527285-e2c5-80bc-9b57-e15d5d8d5574" class="bulleted-list"><li style="list-style-type:disc">cretense (ou minoica)</li></ul><ul id="18527285-e2c5-80cd-80f3-deaaba8579d7" class="bulleted-list"><li style="list-style-type:disc">indo-europeus (micênicos, aqueus, jônicos, eólios, dórios, etc)</li></ul><p id="18527285-e2c5-80ee-bb92-c2552b07f5dc" class="">→ <mark class="highlight-blue_background"><strong>Primeira Diáspora Grega</strong></mark><mark class="highlight-blue_background">:</mark> devido às invasões dóricas, vários desses grupos gregos se dispersaram na direção das ilhas do mar Egeu e litoral da Ásia Menor</p><p id="18527285-e2c5-8058-93df-ece953aa3ee6" class="">
+</p></details></li></ul><ul id="18527285-e2c5-80b7-8da9-d2a72216fd3b" class="toggle"><li><details open=""><summary>Período Homérico (séculos XII a.C. - VIII a.C.)</summary><p id="18527285-e2c5-80db-a24b-c886afdb4bed" class="">No chamado Período Homérico, as populações gregas se organizavam em<br/><br/><em><strong>genos</strong></em> (pequenas unidades familiares agrícolas autossuficientes) liderados pelo <em>pater</em>.</p><p id="18527285-e2c5-8034-9f75-dfdbf4162f5e" class="">
+</p><hr id="18527285-e2c5-8056-ac02-c00c288ec02d"/><p id="18527285-e2c5-80db-b5a5-e0178bee32bb" class="">
+</p><p id="18527285-e2c5-808b-a84d-daed702aa974" class=""><strong><span style="border-bottom:0.05em solid">Colapso da sociedade gentílica:</span></strong> As disputas pelas escassas terras cultiváveis, a expansão demográfica e os conflitos entre os diversos <em>genos</em>, resultaram em uma crescente instabilidade.<br/>→ resultado: união dos poderosos (parentes próximos ao <br/><em>pater</em>) de vários <em>genos</em> e a divisão em três classes</p><ul id="18527285-e2c5-80ed-8afc-e56ecb30889f" class="bulleted-list"><li style="list-style-type:disc"><em><strong>eupátridas</strong></em> (”bem-nascidos”): grandes proprietários</li></ul><ul id="18527285-e2c5-803f-a03d-eddfabd1b5c5" class="bulleted-list"><li style="list-style-type:disc"><em><strong>georgoi</strong></em>  (”agricultores”): pequenos proprietários</li></ul><ul id="18527285-e2c5-80a3-a487-d8557749d3ff" class="bulleted-list"><li style="list-style-type:disc"><em><strong>thetas</strong></em> (”marginalizados”): excluídos da partilha</li></ul><p id="18527285-e2c5-8077-b93b-f01afa33883d" class="">
+</p></details></li></ul><ul id="18527285-e2c5-8087-a6c5-d37e9750c6a0" class="toggle"><li><details open=""><summary>Período Arcaico (séculos VIII a.C. - VI a.C.)</summary><p id="18527285-e2c5-804c-8cd8-cf0df2487e3d" class=""><strong><span style="border-bottom:0.05em solid">Comércio marítimo:</span></strong> O solo pouco fértil e a expansão demográfica contribuiram para quer os gregos se dedicassem à expansão comercial e marítima (que se desenvolveu mais fortemente a partir do Período Arcaico). Os <em>georgoi</em>, incapazes de concorrer com os preços externos, se individaram e por isso, muitos foram escravizados.<br/>→ <br/><mark class="highlight-blue_background"><strong>Segunda Diáspora Grega:</strong></mark> dispersão para diversos pontos da orla do mar Mediterrâneo e do mar Negro, especialmente na Magna Grécia (sul da Península Itálica e ilha da Sicília).</p><p id="18527285-e2c5-80ff-acab-f5909343a2de" class="">
+</p><hr id="18527285-e2c5-8069-925c-ebfe14b9a642"/><p id="18527285-e2c5-80de-ab48-fc7f0b7db4d2" class="">
+</p><figure id="18527285-e2c5-8000-854c-f62ea2f4c496" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-24_123523.png"><img style="width:595.96875px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-24_123523.png"/></a></figure><p id="18527285-e2c5-80b7-87d6-c83df49f2929" class="">Devido a Segunda Diáspora Grega, houve a formação de diversas <em><strong>pólis</strong></em> (cidades-Estado). As cidades-Estado foram inicialmente governadas pelo <em><strong>basileu</strong></em> (espécie de rei); mais tarde, adotou-se um regime oligárquico-aristocrático, liderado pelos eupátridas.</p><ul id="18527285-e2c5-804f-bde7-fcfe3a47cddc" class="toggle"><li><details open=""><summary>A pólis de Esparta</summary><p id="18527285-e2c5-8071-8dcc-cb08fd3b3ba0" class="">Esparta ficava na região da Lacônia, na península do Peloponeso.</p><p id="18527285-e2c5-8066-853e-c13fce1800f4" class="">As dificuldades econômicas pelas quais passaram as demais pólis gregas foram<br/>menos acentuadas em Esparta, que, diferentemente daquelas, não conheceu uma grande escassez agrícola (possuia solo fértil, não desenvolvendo o comércio marítimo) combinada com o crescimento da população (pois havia infanticídio e rigorosa seleção).<br/></p><p id="18527285-e2c5-8064-8166-ff4c7bb8b55f" class="">
+</p><hr id="18527285-e2c5-807f-9da6-fba12a4310e3"/><p id="18527285-e2c5-80dc-a34d-c9d682d724ce" class="">
+</p><p id="18527285-e2c5-8048-9972-f4eb39147375" class="">A sociedade espartana era formada por:</p><ul id="18527285-e2c5-803c-b0c5-ecc24b590ecc" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>espartanos:</strong></mark> elite militar, detentores do poder através da força militar.<br/>→ Gerúsia (conselho de anciãos, membros das famílias mais ricas)<br/>→ Apela (assembleia de guerreiros)<br/></li></ul><ul id="18527285-e2c5-806e-bc0a-ffd36c10958d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>periecos:</strong></mark> recebiam as terras mais pobres (que os espartanos não queriam). Eram pequenos comerciantes, artesãos, etc.</li></ul><ul id="18527285-e2c5-80a3-a1be-f0ffe2cc21f1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>hilotas:</strong></mark> servos, propriedade da pólis.</li></ul><p id="18527285-e2c5-80e8-a3ab-d9b145f99a16" class="">
+</p><p id="18527285-e2c5-8014-a801-c01a59072018" class="">Apesar de seu tradicional isolamento, Esparta acabou por buscar sua expansão já no Período Clássico (V a.C.-IV a.C.), levada por pressões externas, ameaças estrangeiras e o desejo de se transformar em uma potência hegemônica.</p><p id="18527285-e2c5-80d6-b5e1-f9d00ec94ad2" class="">
+</p></details></li></ul><ul id="18527285-e2c5-80a0-b0e1-da2fce2960b0" class="toggle"><li><details open=""><summary>A pólis de Atenas</summary><p id="18527285-e2c5-80d7-b349-ecdf39aeb28c" class="">Atenas ficava na região da Ática, na Grécia continental.</p><p id="18527285-e2c5-809b-9600-ccde14f580ed" class="">Durante muito tempo, Atenas manteve um regime monárquico, até que o último basileu foi derrubado pela aristocracia proprietária de terras.</p><p id="18527285-e2c5-80fa-9e4c-fad5d5183a17" class="">Além das tensões causadas pelo grande número de escravos (por dívidas e de guerra), surgia uma nova categoria de homens enriquecidos com o comércio que começaram a questionar o monopólio político dos eupátridas.</p><p id="18527285-e2c5-8052-9fc3-d961b7a76d4b" class="">
+</p><p id="18527285-e2c5-8086-ad65-c2f7ba69d42b" class="">Diante desse quadro, vários legisladores atenieneses fizeram propostas para atenuar as tensões sociais:</p><ul id="18527285-e2c5-8015-b638-fc5db6307c66" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default_background"><strong><span style="border-bottom:0.05em solid">Drácon:</span></strong></mark><mark class="highlight-default_background"> </mark>tornou público um registro escrito das leis, que até então se baseavam na tradição oral e conhecidas apenas pelos eupátridas.</li></ul><ul id="18527285-e2c5-8053-a53e-f4b8752decef" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default_background"><strong><span style="border-bottom:0.05em solid">Sólon:</span></strong></mark> eliminou a escravidão por dívidas (libertando todos aqueles que haviam se tornado escravos por esse motivo). Também criou a bulé (400 membros) e a eclésia (assembleia popular).<br/>→ desagradou a elite eupátrida, que criou sucessivas tiranias em resposta<br/></li></ul><ul id="18527285-e2c5-804b-bdcf-c604fbeda6e1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-default_background"><strong><span style="border-bottom:0.05em solid">Clístenes (”pai da democracia”):</span></strong></mark> liderou uma rebelião que derrubou o último tirano e fundou a democracia. Também criou o ostracismo (condenação a 10 anos de exílio, de todo aquele que fosse uma ameaça à democracia).<br/>→ a eclésia passa a estar acima da bulé hierarquicamente<br/>→ a bulé passa a ter 500 membros<br/></li></ul><p id="18527285-e2c5-8045-8844-cac8272becaf" class="">
+</p><hr id="18527285-e2c5-8014-8d9a-eb7ed94e7ee8"/><p id="18527285-e2c5-8039-afe7-e6a7afe5a072" class="">
+</p><p id="18527285-e2c5-80ad-976e-e1e6193f10e4" class="">A sociedade ateniense era formada por:</p><ul id="18527285-e2c5-80e1-bbc4-f518ce93c37b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Cidadãos:</strong></mark> homens livres (maiores de idade), nascidos em Atenas (filho de pai ateniense). Eram os únicos a participar diretamente da democracia.<ul id="18527285-e2c5-802a-b441-cd2c6386c9d7" class="bulleted-list"><li style="list-style-type:circle"><strong>Eclésia:</strong> assembleia de cidadãos</li></ul><ul id="18527285-e2c5-8003-b7aa-d79f22a5fa95" class="bulleted-list"><li style="list-style-type:circle"><strong>Boulé:</strong> conselho de 500 membros, responsável pela administração</li></ul></li></ul><ul id="18527285-e2c5-80aa-937f-f036b5424e10" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Metecos:</strong></mark> estrangeiros. Não possuiam direitos políticos, mas com liberdade de comércio e trabalho.</li></ul><ul id="18527285-e2c5-802d-86b0-fe276bb79e69" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Escravos:</strong></mark> pessoas sem direitos, considerados propriedade de seus donos.</li></ul><p id="18527285-e2c5-8047-b33b-c31f0198bb6b" class="">
+</p></details></li></ul><p id="18527285-e2c5-80cd-acd9-c42dd2114747" class="">
+</p></details></li></ul><ul id="18527285-e2c5-8014-b009-c4232bc1212a" class="toggle"><li><details open=""><summary>Período Clássico (séculos V a.C. - IV a.C.)</summary><p id="18a27285-e2c5-8017-97ad-d657d1cccc9f" class="">O século V a.C. (”século de Péricles”) foi considerado o apogeu da antiga civilização grega. A partir das reformas de Clístenes, toda a Grécia acabaria recebendo influências atenienses, que se aprofundaram durante o governo de Péricles.</p><p id="18b27285-e2c5-80e1-ba3b-f2794352f443" class="">Durante o governo de Péricles (444 a.C. - 429 a.C.), aprimorou-se a democracia.<br/>→ criação da <br/><em><mark class="highlight-blue_background"><strong>mistoforia</strong></mark></em> (subsídio para homens livres pobres) a fim de aumentar a participação popular nos assuntos da administração da cidade<br/>→ contrução do Paternon (templo dedicado à deusa Atena)<br/></p><p id="18a27285-e2c5-802e-ac2a-cc3fc63c3f8e" class="">
+</p><hr id="18a27285-e2c5-800c-a142-d7139ae6f90c"/><p id="18a27285-e2c5-8034-ab8e-f445022b4861" class="">
+</p><p id="18a27285-e2c5-80f8-9d74-e985ed69e099" class=""><strong><span style="border-bottom:0.05em solid">Guerras Médicas (Guerras Greco-Pérsicas):</span></strong> por duas vezes os gregos e persas se enfrentaram, devido ao expansionismo dos persas (tentaram invadir a Grécia).<br/>→ resultado: vitória da Grécia e a desagregação do Império Persa. Assim, se inicia o apogeu grego (com o domínio do imperialismo ateniense sobre as demais pólis).<br/></p><figure id="18a27285-e2c5-80c8-8b87-f815872995f1" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-29_204744.png"><img style="width:597.96875px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-29_204744.png"/></a></figure><ul id="18a27285-e2c5-8020-be75-d06cf62035ac" class="toggle"><li><details open=""><summary>Primeira Guerra Médica (490 a.C. - 480 a.C.)</summary><p id="18a27285-e2c5-8000-8843-cc0c4eee63fe" class="">Os persas (sob comando de Dario I) desembarcaram na Grécias, mas foram surpreendidos pelo exército ateniense na Planície de Maratona, onde, apesar de sua superioridade numérica, foram derrotados pelos Gregos.</p><p id="18a27285-e2c5-809c-9e91-e753ca97b0c0" class="">
+</p></details></li></ul><ul id="18a27285-e2c5-80cd-b781-c761cc540fb9" class="toggle"><li><details open=""><summary>Segunda Guerra Médica (480 a.C. - 479 a.C.)</summary><p id="18a27285-e2c5-8046-b5c5-fcc053c6b9a1" class="">Com receio de que Pérsia voltasse ao ataque, é criada a <strong><span style="border-bottom:0.05em solid">Liga de Delos</span></strong> (aliança militar entre as pólis gregas [liderada por Atenas], onde cada pólis pagava impostos para sustentar as frotas, exércitos, etc). </p><p id="18a27285-e2c5-803b-a1c8-e43327ff0802" class="">Os persas (sob comando de Xerxes I) partiram com aproximadamente 100 mil homens em direção à Grécia. Xerxes foi derrotado na batalha de Salamina.</p><p id="18a27285-e2c5-80bd-99af-d2e552bf04c6" class="">
+</p><p id="18a27285-e2c5-807a-8fb2-c86a60b6e093" class="">Ao final das guerras contra os persas, atenas insistiu na manutenção da Liga de Delos (e consequentemente, na cobrança de tributos). As pólis insatisfeitas com o imperialismo ateniense formaram a <strong><span style="border-bottom:0.05em solid">Liga do Peloponeso</span></strong> (aliança militar [liderada por esparta], contra Atenas).</p><p id="18a27285-e2c5-80a9-b973-d41a39f803e3" class="">
+</p></details></li></ul><p id="18a27285-e2c5-8011-b9f4-f50604099e74" class="">
+</p><p id="18a27285-e2c5-808f-8da2-c411c5aa27cd" class=""><strong><span style="border-bottom:0.05em solid">Guerra do Peloponeso (431 a.C. - 404 a.C.):</span></strong> após as Guerras Médicas, tem início uma guerra civil entre gregos (Lida de Delos [liderada por Atenas] x Liga do Peloponeso [liderada por Esparta]).<br/>→ resultado: vitória e hegemonia de Esparta. Com isso, tem-se o fim da democracia e o retorno do poder oligárquico na Grécia. Várias guerras são travadas pelo controle da península Balcânica (por outras cidades), enfraquecendo as pólis e abrindo caminho para o domínio da Macedônia que em 338 a.C. vence os exércitos gregos.<br/></p><p id="18527285-e2c5-80d3-a93d-f627c3d1cf74" class="">
+</p></details></li></ul><ul id="18527285-e2c5-80da-9120-f05ee52fa7f2" class="toggle"><li><details open=""><summary>Período Helenístico (séculos IV a.C. - II a.C.)</summary><p id="18b27285-e2c5-8023-a6ca-fde5fd87108a" class="">O principal responsável pelas grandiosas conquistas do Império Macedônico foi Alexandre Magno (”O Grande”), filho de Felipe II (vencedor da Batalha de Queroneia). Educado por Aristóteles, Alexandre assimilou os valores da cultura grega e, após sufocar revoltas internas, partiu para a expansão territorial, tomando a Ásia Menor, a Pérsia e chegando até as margens do rio Indo, na Índia.<br/>→ Alexandre difundiu a cultura grega pelo Oriente<br/></p><p id="18b27285-e2c5-803e-b9ca-e5b89a7a7d89" class="">
+</p><p id="18b27285-e2c5-801f-9169-cf91ddbd8b69" class="">Após a morte de Alexandre (323 a.C.), o grande império que conquistara passou por divisões e lutas internas, sendo dominado pelos romanos.<br/><br/><mark class="highlight-teal_background"><strong>→ Helenismo:</strong></mark> fusão da cultura grega com a oriental. Originou importantes correntes filosóficas (cinismo, estoicismo, epicurismo, ceticismo).<br/><br/></p><hr id="18b27285-e2c5-8046-8ba5-f49c5395581c"/><p id="18b27285-e2c5-80f4-b196-f3ac0e32a52c" class="">
+</p><p id="18b27285-e2c5-804c-b746-dae01c0668d9" class="">Entretanto, mesmo conquistando a Grécia, Roma assimilou muitos de seus valores culturais, especialmente na forma helenística.</p><p id="18b27285-e2c5-801b-afd4-c8d61c44e923" class="">
+</p></details></li></ul><p id="18127285-e2c5-80e3-97ac-c1da91a63c00" class="">
+</p></details></li></ul><ul id="18127285-e2c5-8036-a8be-c3d833b2ebbf" class="toggle"><li><details open=""><summary>Roma Antiga</summary><p id="18327285-e2c5-809e-b130-f1dfb2aed667" class="">A civilização Romana é a civilização da Antiguidade que exerceu mais influência sobre o mundo ocidental.</p><p id="18327285-e2c5-80b6-8670-c8e326f4da46" class="">Alguns exemplos:</p><ul id="18327285-e2c5-80c5-8cbc-d3a04ce771ec" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Sistema jurídico:</strong></mark> Dividia-se em <em><strong>Jus Naturale</strong></em> (direito natural, compêndio de filosofia jurídica), <em><strong>Jus Gentium</strong></em> (”direito das gentes”, não considerava nacionalidades) e<br/><br/><em><strong>Jus Civile</strong></em> (”direito civil”, aplicável aos cidadãos de Roma).</li></ul><ul id="18327285-e2c5-809a-9666-f6cef7318b13" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Mitologia cristã:</strong></mark> o cristianismo surgiu e se expandiu, a partir da Palestina, sob o domínio romano. A mesma civilização romana foi base para o domínio da Igreja cristã, ao tornar-se religião oficial do Estado. Após certas divisões do cristianismo, essa vertente passou a ser chamada de Igreja católica romana.</li></ul><ul id="18327285-e2c5-800b-9b01-f47d0c5db529" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Línguas românicas/latinas/neolatinas:</strong></mark> Se originam do latim vulgar.<br/>→ Exemplos: Romeno, Italiano, Francês, Espanhol, Catalão, Galego, Português, etc<br/></li></ul><ul id="18327285-e2c5-80d3-81cb-e321a00d0050" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Alfabeto latino:</strong></mark> é o sistema de escrita alfabética mais usado no mundo atualmente. É derivado dos alfabetos etrusco e grego (por sua vez, derivados do alfabeto fenício).</li></ul><p id="18327285-e2c5-808b-86cd-de3e265dccd3" class="">
+</p><hr id="18327285-e2c5-80a1-90a5-e93096c4e60f"/><p id="18327285-e2c5-8034-9475-f3db390d6d08" class="">
+</p><p id="18327285-e2c5-8058-9ad2-cec4162fb2c4" class="">Períodos da Roma Antiga:</p><ul id="18227285-e2c5-8054-8928-d95878207fe5" class="toggle"><li><details open=""><summary>Monarquia (fundação de Roma - século VI a.C.)</summary><figure id="18227285-e2c5-8013-abaf-f36529fc2703" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-21_122659.png"><img style="width:595.96875px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-21_122659.png"/></a></figure><p id="18227285-e2c5-80bd-9ad0-ce9cc8c282ff" class="">Antes da fundação da cidade, a região foi ocupada por diversos povos como indo-europeus, italiotas (latinos, sabinos, samnitas e úmbrios), etruscos, gregos, etc. </p><p id="18227285-e2c5-8045-a6cd-f753226da07d" class="">Roma nasceu de um pequeno povoado nas terras férteis do Lácio (centro da península Itálica). A península Itálica possui uma cadeia montanhosa que protege a região dos ventos frios do norte e contribui para a ocorrência de chuvas. O solo na região é fértil, favorecendo a agricultura e a pecuária. O rio Tibre nasce nas montanhas da Itália central e cruza uma planície antes de chegar ao mar. Às margens do rio Tibre, foi fundada a cidade de Roma.</p><ul id="18227285-e2c5-8061-8935-cc4071d24566" class="toggle"><li><details open=""><summary>Origem mitológica da cidade de Roma</summary><figure id="18227285-e2c5-803c-8c86-d50627a6e606" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-21_121626.png"><img style="width:624px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-21_121626.png"/></a><figcaption>Escultura <em>Lupa Capitolina</em>, exposta na cidade de Roma, Itália.</figcaption></figure><p id="18227285-e2c5-808f-bf3c-ea6393ddea88" class="">Segundo a mitologia clássica, os irmãos Rômulo e Remo foram escondidos em um cesto e colocados no rio Tibre. Ao chegar entre dois vales, foram amamentados por uma loba e criados por pastores. Adultos, os irmãos resolveram fundar uma cidade.</p><p id="18227285-e2c5-8044-ac55-e6329a9f4697" class="">
+</p></details></li></ul><p id="18227285-e2c5-8075-a78f-ee0b4d78b8b5" class="">
+</p><hr id="18227285-e2c5-8097-b2b8-e02d0a4fc5c2"/><p id="18227285-e2c5-80ec-8be1-d758266afecf" class="">
+</p><p id="18227285-e2c5-8097-85fb-cf7821fe740d" class=""><strong><span style="border-bottom:0.05em solid"> Divsião da sociedade:</span></strong></p><ul id="18227285-e2c5-806e-b917-f94d35545cab" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Rei:</strong></mark> acumulava funções políticas, militares e religiosas.<br/>→ O Senado (Conselho dos Anciãos) formado pelos Patrícios mais ricos, elegia e controlava o poder do Rei.<br/></li></ul><ul id="18227285-e2c5-80e0-8496-e1c2f9f4dd90" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Patrícios:</strong></mark> grandes proprietários de terra. Constituíam uma aristocracia detentora de privilégios políticos e religiosos.</li></ul><ul id="18227285-e2c5-80b4-b41e-d42a9eaaee1c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Plebeus:</strong></mark> homens livres. Não tinham direitos políticos.<br/>→ Muitas vezes participavam como “clientes” (Plebeus ou Patrícios menos ricos) do “patrocínio” (serviço de prestação a um patrício, em troca de proteção e outros benefícios).<br/></li></ul><ul id="18227285-e2c5-801e-9d6b-fd8e3e277cb8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Escravos:</strong></mark>  endividados ou vencidos em guerras.</li></ul><p id="18327285-e2c5-80c0-a3fd-d9f64524b56b" class="">
+</p><p id="18327285-e2c5-809d-95f7-e47fca0e5820" class=""><strong><span style="border-bottom:0.05em solid">Família Tradicional:</span></strong> A família romana tradicional era chefiada pelo homem mais velho, o <em>paterfamilias</em> (”pai de família”), que tinha autoridade sobre os membros, inclusive os netos e os escravos. Ele selecionava marido e mulher para os filhos, arranjando os casamentos deles.</p><p id="18327285-e2c5-8025-bad3-d571696ed001" class="">
+</p><hr id="18327285-e2c5-807f-afd2-dbeecc373ae6"/><p id="18227285-e2c5-801e-9990-d59681dede81" class="">
+</p><p id="18227285-e2c5-8095-bb3a-e49dcded5214" class="">Do século VII a.C. ao VI a.C., os povos etruscos conquistaram Roma. Em 509 a.C., o último rei de origem etrusca (Tarquínio, o Soberbo), foi deposto por uma revolta, e a<br/>realeza foi abolida. Nesse período, sabe-se que em várias cidades os patrícios derrubaram reis, visando aumentar seu poder.<br/></p><p id="18227285-e2c5-8087-9659-ca8ecad8b89f" class="">Assim, os reis deixaram de existir, e Roma passou a ser uma República.</p><p id="18227285-e2c5-806a-aa49-cd0d02656672" class="">
+</p></details></li></ul><ul id="18227285-e2c5-807b-b60d-f86d806af8e1" class="toggle"><li><details open=""><summary>República (séculos VI a.C. - I a.C.)</summary><p id="18327285-e2c5-8055-926b-c403aa7ad593" class=""> do latim, <em><strong>magistratus</strong></em>, significa “o cargo de governar’ ou “pessoa que governa”.</p><p id="18327285-e2c5-805f-a653-db9139079f25" class="">O governo republicano passou a ser exercido pelos <mark class="highlight-blue_background"><strong>magistrados</strong></mark> (detentores de cargos públicos, eleitos para mandatos de um ano), com assessoria do Senado (agora sem o rei, se torna o órgão máximo de poder, com membros vitalícios da oligarquia patrícia).</p><p id="18327285-e2c5-8010-9f82-cb0dca693597" class="">Tipos de magistrados:</p><ul id="18327285-e2c5-8054-83aa-cc26ff88a20a" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Cônsules:</strong></mark> sempre em número de dois, eram os mais importantes magistrados. Presidiam o Senado e as assembleias (divididas em centurial, curial e tribal).<br/>→ ditador temporário (em casos excepcionais ou guerra): era nomeado pelos Cônsules.<br/></li></ul><ul id="18327285-e2c5-80ef-84f2-e9970285f351" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Pretores:</strong></mark> administravam a justiça.</li></ul><ul id="18327285-e2c5-801d-8d74-eab43a901222" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Censores:</strong></mark> faziam a contagem e a classificação da população de acordo com a renda.</li></ul><ul id="18327285-e2c5-806e-92cb-d04c4d4039bf" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Edis:</strong></mark> cuidavam da conservação, abastecimento e policiamento da cidade.</li></ul><ul id="18327285-e2c5-8061-9ebc-f142e61e3be4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Questores:</strong></mark> encarregados do Tesouro público (finanças do governo).</li></ul><p id="18327285-e2c5-8085-abe2-ee83d943c016" class="">
+</p><p id="18327285-e2c5-8007-8b73-ef5d56afdd14" class=""><strong><span style="border-bottom:0.05em solid">Marginalização dos plebeus:</span></strong> descontentes com sua situação, os plebeus eram fonte de crescente tensão na República.</p><ul id="18327285-e2c5-8005-9ee5-ff96f77f83d8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Revolta do Monte Sagrado ou Primeira Secessão da Plebe (495 a.C.):</strong></mark> os plebeus se retiraram para o Monte Sacro, recusando-se a lutar nas guerras e a trabalhar até que suas demandas fossem atendidas.</li></ul><ul id="18327285-e2c5-8091-affc-eb07a636d37d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Criação do cargo de tribuno da plebe (494 a.C.):</strong></mark> os patrícios cederam à pressão, criando uma magistratura eleita pelos plebeus, com a função de proteger os interesses da plebe.</li></ul><ul id="18327285-e2c5-807e-b2e6-fb0fc61ab5b3" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Lei das Doze Tábuas (494 a.C.):</strong></mark> visando também atenuar as tensões, foi elaborada a primeira compilação das leis romanas (que até então eram transmitidas oralmente e quase sempre manipuladas a favor dos patrícios).</li></ul><ul id="18327285-e2c5-8016-81b1-fe3755390dc2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Casamento entre patrícios e plebeus (445 a.C.):</strong></mark> foi permitido o casamento entre patrícios e plebeus.</li></ul><ul id="18327285-e2c5-8059-a87d-c190387aa9a1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Direito às terras (367 a.C.):</strong></mark> os plebeus passaram a ter acesso às terras públicas.</li></ul><p id="18327285-e2c5-809a-88dd-da4cec07c90b" class="">
+</p><hr id="18327285-e2c5-8030-995e-c57542a47bb1"/><p id="18327285-e2c5-8050-8941-eb4ad9bf5cdf" class="">
+</p><figure id="18327285-e2c5-80eb-bfda-de3768fa4ee3" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-22_101641.png"><img style="width:595.984375px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-22_101641.png"/></a></figure><p id="18327285-e2c5-8007-8311-f5eae6ba1297" class=""><strong><span style="border-bottom:0.05em solid">Guerras Púnicas (246 a.C. - 146 a.C.):</span></strong> Após conquistar toda a Península Itálica (séculos V a.C. - III a.C.), Roma entrou em conflito com Cartago (cidade no norte da África fundada por fenícios que controlava praticamente todo o comércio na bacia do Mediterrâneo desde o enfraquecimento grego com as Guerras do Peloponeso), culminando com a destruição de Cartago e a anexação da Sicília (vista pelos romanos como um prolongamento da Península Itálica).<br/>Algumas das consequências foram:<br/></p><ul id="18627285-e2c5-800a-aeb3-cbf34d44ba67" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>controle romano de territórios espalhados por todo o mediterrâneo</strong></mark></li></ul><ul id="18327285-e2c5-8052-8397-f4885da27b03" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Consolidação da economia escravista:</strong></mark> milhares de escravos chegavam dos territórios conquistados.</li></ul><ul id="18327285-e2c5-8098-8228-de20da5339b8" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Queda dos preços de produtos agrícolas:</strong></mark> ocorreu devido ao enorme afluxo de bens das províncias conquistadas (pela pilhagem de guerra, cobrança de tributos, etc), impossibilitando os proprietários plebeus de concorrerem com o baixo preço do trigo importado.<br/>→ muitos plebeus, não encontrando condições de sobreviver no campo, vendiam suas terras e transformavam-se em mão de obra barata na cidade.<br/></li></ul><ul id="18327285-e2c5-8030-b852-fd5a131af396" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Surgimento dos homens-novos (nova classe de comerciante em ascensão)</strong></mark></li></ul><p id="18327285-e2c5-80d7-990a-d8baa314150e" class="">
+</p><p id="18327285-e2c5-8009-a8da-d953b692d94c" class=""><strong><span style="border-bottom:0.05em solid">Tentativas de reformas agrárias (irmãos Graco):</span></strong> os irmãos Tibério Graco e Caio Graco (nos cargos de tribunos da plebe) viam na distribuição de terras do Estado uma forma de superar a crise, satisfazendo as necessidades da plebe empobrecida. A reforma política agrária dos irmãos Graco fracassou e a concentração de terras nas mãos dos patrícios continuou a existir.</p><p id="18627285-e2c5-807f-b047-db2f0ffb2a05" class="">
+</p><hr id="18627285-e2c5-80d0-8f2a-c42a4350ff29"/><p id="18627285-e2c5-802b-aaed-c6b4f0041e9e" class="">
+</p><p id="18327285-e2c5-8047-b566-d8e3f20c5c56" class=""><strong><span style="border-bottom:0.05em solid">Instabilidade e disputas pelo poder:</span></strong> Toda essa situação configurou a crise da República romana, pois o governo oligárquico não tinha mais condições de fazer frente às crescentes pressões sociais e políticas. Isso Resultou na criação dos triunviratos (governos de três lideres político-militares representando diferentes grupos).</p><ul id="18327285-e2c5-80c3-9418-e91902a9ae29" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Primeiro Triunvirato (Caio Júlio César, Pompeu e Crasso):</strong></mark> Júlio César proclamou-se ditador vitalício. Tentou sem sucesso ter um poder maior do que o do Senado, sendo assassinado em pleno Senado, em 44 a.C.</li></ul><ul id="18327285-e2c5-80a0-966e-d7b4a88f89d0" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Segundo Triunvirato (Marco Antônio, Otávio Augusto e Lépido):</strong></mark> Otávio, em 31 a.C., conseguiu derrotar seus rivais e recebeu do Senado os títulos de<br/><br/><em>princeps</em> (”primeiro cidadão”) e <em>imperator</em> (”o supremo”). A concentração dos poderes surgiu da necessidade de sufocar a anarquia e as rebeliões de escravos.<br/>→ atribuiu a si mesmo o título de <br/><em>augustus</em> (”o divino”). </li></ul><p id="18327285-e2c5-809b-8c8f-fc959d13be2d" class="">
+</p><p id="18327285-e2c5-8022-a9ab-ead8e4f9870c" class="">Com a centralização do poder nas mãos do imperador e a diminuição do poder do Senado, ocorreu uma profunda reforma política em Roma. O imperador passou não só a deter o poder político e militar, mas também a ser cultuado como uma divindade, pelo título de <em><strong>augustus</strong></em> (”o divino”).</p><p id="18327285-e2c5-8092-b1ef-d92f9f92d16f" class="">
+</p></details></li></ul><ul id="18227285-e2c5-801a-a984-c26deeacadef" class="toggle"><li><details open=""><summary>Alto Império (séculos I a.C. - III d.C.)</summary><p id="18b27285-e2c5-80ac-b96c-ff8e92f9c28d" class="">Para atenuar as tensões sociais, Otávio Augusto leva em consideração critérios censitários (renda), favorecendo além da antiga aristocracia patrística, os novos comerciantes enriquecidos com a expansão territorial.</p><p id="18627285-e2c5-8042-9048-c6e320bae09c" class="">O período do Alto Império, desde a derrubada da República por Augusto até o fim do século II, é conhecido como <em><strong>Pax Romana</strong></em> (= “Paz Romana”), devido à relativa paz interna e externa, e a toda prosperidade do Império.<br/><br/></p><p id="18327285-e2c5-805d-ac03-e0ebf69cbb79" class=""><strong><span style="border-bottom:0.05em solid">Política do “Pão e Circo”:</span></strong> Otávio praticou várias vezes a doação de trigo e pão ao povo, assim como celerações (jogos, disputas entre gladiadores) de acordo com as circunstâncias políticas.<br/>→ objetivo: apaziguamento e manipulação das massas (incentivadas a ficar desinteressadas em política).<br/></p><p id="18327285-e2c5-8085-9f71-e48729b4599d" class="">
+</p><p id="18327285-e2c5-80bd-93c3-cfb645e52bf3" class=""><strong><span style="border-bottom:0.05em solid">Ministro Mecenas:</span></strong> apoiou financeiramente artistas e escritores, no período considerado o mais rico da civilização romana em termos culturais.<br/>→ exemplos: os poetas Virgílio, Horácio e Ovídio.<br/></p><p id="18327285-e2c5-8072-9fac-d95186cd6a9c" class="">
+</p><hr id="18327285-e2c5-8007-b885-e11af440fdbf"/><p id="18327285-e2c5-80ad-93d1-dd563ff754d8" class="">
+</p><p id="18327285-e2c5-80e3-b03d-e2afb7875948" class="">Após a morte de Otávio Augusto assumiram o governo:</p><ul id="18327285-e2c5-80da-8f64-ef5f7c2ac87b" class="bulleted-list"><li style="list-style-type:disc">Tibério (14 d.C. - 37 d.C.): marcado pela imoralidade e corrupção, com intrigas, conspirações e perseguições.</li></ul><ul id="18327285-e2c5-8024-b437-e69f7bc5b402" class="bulleted-list"><li style="list-style-type:disc">Calígula (37 d.C. - 41 d.C.): conhecido por ser um déspota, com atitudes tirânicas e cruéis.</li></ul><ul id="18327285-e2c5-80f2-9c0a-f8c4f42dfa81" class="bulleted-list"><li style="list-style-type:disc">Cláudio (41 d.C. - 54 d.C.): envenenado pela própria esposa, Agripina, que visava assegurar o trono para seu filho, Nero.</li></ul><ul id="18327285-e2c5-8064-ba31-dc2b4f3429e6" class="bulleted-list"><li style="list-style-type:disc">Nero (54 d.C. - 68 d.C.): acusado (por historiadores cristãos) de atear fogo em Roma e culpar os seguidores do cristianismo - que por isso eram presos e levados às imensas arenas para enfrentar animais selvagens ou gladiadores, em espetáculos públicos.</li></ul><ul id="18327285-e2c5-80a2-a2f4-eba3a764bfdc" class="bulleted-list"><li style="list-style-type:disc">dinastia dos Flávios (68 d.C. - 96 d.C.) e dos Antoninos (96 d.C. - 192 d.C.): Foram superadas as violentas disputas sucessórias, e Roma retomou a expansão territorial com as ultimas anexações do Império. Destacou-se Marco Aurélio conhecido como “imperador filósofo” (foi um grande estoico).</li></ul><p id="18327285-e2c5-8055-9a1d-c248b067c92a" class="">
+</p></details></li></ul><ul id="18227285-e2c5-807a-90ff-d6504c1956bc" class="toggle"><li><details open=""><summary>Baixo Império (séculos III d.C. - V d.C.)</summary><p id="18527285-e2c5-8019-b78f-f3c923cdcf90" class="">A expansão territorial (base de toda a riqueza e estabilidade do Império Romano) foi se esgotando, devido a alguns fatores:</p><ul id="18527285-e2c5-8027-932c-f975cad48965" class="bulleted-list"><li style="list-style-type:disc">Elevados custos para manter as estruturas imperiais, militares e administrativas</li></ul><ul id="18527285-e2c5-800f-a5be-d8db129c6300" class="bulleted-list"><li style="list-style-type:disc">Obstáculos naturais (desertos da África e Oriente Médio, florestas da Europa central, etc)</li></ul><ul id="18527285-e2c5-80e3-b2b9-e5fdfa8514bb" class="bulleted-list"><li style="list-style-type:disc">Distância e custos para realizar novas anexações</li></ul><ul id="18527285-e2c5-808c-ac04-f26f8c7a529d" class="bulleted-list"><li style="list-style-type:disc">Pressão dos povos dominados e vizinhos</li></ul><p id="18527285-e2c5-80c6-9b6e-e1ba6a1039e5" class="">
+</p><p id="18527285-e2c5-8097-ae7e-e03cc73bd155" class="">Sem novas conquistas, <strong>não havia captura de escravos</strong>, e a mão de obra começou a se escassear. Paralelamente, para os escravos principalmente, o caráter ético espiritual cristão (que passou a ter um caráter subversivo para a estrutura política romana) era consolador:</p><ul id="18527285-e2c5-800b-8aff-d28dc2b10524" class="bulleted-list"><li style="list-style-type:disc">(para os bons cristãos) uma vida melhor após a morte no paraíso</li></ul><ul id="18527285-e2c5-806d-a1c7-fef9e455a305" class="bulleted-list"><li style="list-style-type:disc">(para os maus ou pagãos) uma vida eterna no inferno</li></ul><p id="18527285-e2c5-807f-92c7-cab19986ecd3" class="">
+</p><hr id="18527285-e2c5-8093-8b35-d65bdc4de877"/><p id="18527285-e2c5-803c-b3c9-db19c4ed0c3f" class="">
+</p><p id="18527285-e2c5-807e-9e43-f999964f0d81" class="">Em meio às dificuldades, o Estado romano passou a intervir cada vez mais, tentando salvar o Império Romano:</p><ul id="18527285-e2c5-8068-bb5b-e7b549db36a7" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Dioclesiano (284 - 305):</strong></mark> criou o Édito Máximo (limite máximo para os preços de mercadorias e salários) numa tentativa de combater a crescente inflação.<br/>→ resultado: os problemas de abastecimento aumentaram.<br/></li></ul><ul id="18527285-e2c5-80ba-81d3-fa5f7122446d" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Constantino (306 - 337):</strong></mark> criou o Édito de Milão (liberdade de culto aos cristãos).</li></ul><ul id="18527285-e2c5-80c5-997d-c2ed708e8379" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Teodósio (378 - 395):</strong></mark> criou o Édito de Tessalônica (cristianismo passa a ser a religião oficial do Império).</li></ul><p id="18527285-e2c5-8076-82a5-c98db49937e5" class="">
+</p><p id="18527285-e2c5-80d0-bffc-f3aa7296d2eb" class="">O Império Romano, enfraquecido economicamente e politicamente, sofreu com a penetração de povos <strong>bárbaros</strong> (como os romanos denominavam os povos que não falavam latim e que não viviam dentro das fronteiras), que inicialmente chegaram como trabalhadores agrícolas, e logo sua entrada se transformou em invasão.<br/>→ <br/><mark class="highlight-red_background"><strong>“bárbaros”</strong></mark>: povos germânicos (visigodos, vândalos, ânglos, saxões, francos, hérolos, ostrogodos, etc.), eslavos, tártaro-mongóis (turcos, hunos, etc.), alanos, …<br/><br/></p><p id="18527285-e2c5-8063-bc66-e3d0f9edddd8" class="">Em 476, os hérulos (um dos povos bárbaros), invadiram e saquearam a cidade de Roma, e decretaram o fim do Império Romano (ao menos em sua parte ocidental).</p><p id="18527285-e2c5-8018-b2bb-cfb85415a9a3" class="">
+</p></details></li></ul><p id="18227285-e2c5-8042-8ab7-e2e5d83d5801" class="">
+</p></details></li></ul><p id="18127285-e2c5-8034-8aa0-d52443c7c79c" class="">
+</p></details></li></ul><ul id="18b27285-e2c5-8005-8af7-c76618758f0a" class="toggle"><li><details open=""><summary>Capítulo 4: Outras Antiguidades</summary><ul id="17a27285-e2c5-8085-88d1-efa0f8c0e384" class="toggle"><li><details open=""><summary>O Extremo Oriente: Índia e China</summary><p id="18327285-e2c5-8019-a55d-de036969f0bb" class="">As primeiras civilizações da Antiguidade surgiram muito antes do século VII a.C. (aproximadamente entre 4000 e 3000 a.C.). Além disso, elas não se desenvolveram em regiões desérticas do continente europeu, mas sim próximas a grandes rios na Ásia e na África, como o Nilo (Egito), Tigre e Eufrates (Mesopotâmia), Indo (Índia) e Huang He (China).</p><p id="18327285-e2c5-8085-b62e-db8ab817a7ed" class="">Os vales do rio Nilo, Eufrates, Tigre, Ganges, entre outros, foram primordiais para a formação das civilizações egípcias, sumérias, babilônicas e hindu.</p><p id="18327285-e2c5-80f9-aca2-df7fb9a934db" class="">
+</p></details></li></ul><p id="18d27285-e2c5-808f-b3ac-f91b7c457792" class="">
+</p></details></li></ul><ul id="17327285-e2c5-8025-add6-ea750b6da887" class="toggle"><li><details open=""><summary>Capítulo 5: Império Bizantino e Árabes</summary><ul id="18927285-e2c5-80b8-9cbf-da25d092b036" class="toggle"><li><details open=""><summary>Império Bizantino</summary><p id="18927285-e2c5-80e4-a40f-dbcbbb962133" class="">Tomando o início da denominada Idade Média europeia, para os bizantinos de então não existia Império Bizantino (denominação dada pelos turcos muito tempo depois) e nem Império Romano do Oriente, somente Império Romano.<br/>→ continuidade: não é por ter uma nova capital (antiga Bizâncio dos gregos, “Constantinopla” a partir de 330 d.C. por mudança do imperador Constantino) que o Império Romano deixaria de ser ele mesmo. Dessa forma, a herança romana se mesclou com elementos orientais e helênicas.<br/>→ economia menos escravista: por depender menos de escravos, foi bem menos impactada pela crise do escravismo do Império romano.<br/></p><p id="18927285-e2c5-8062-bee8-cd2c3660d5e0" class="">
+</p><hr id="18927285-e2c5-8034-accc-f3ac9500220a"/><p id="18927285-e2c5-803b-b17d-fc649f994c70" class="">
+</p><figure id="18927285-e2c5-80d2-94a4-c6576381bda1" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-28_185142.png"><img style="width:625.984375px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-28_185142.png"/></a></figure><ul id="18927285-e2c5-80b0-9991-e0d565831194" class="bulleted-list"><li style="list-style-type:disc">(527-565): o imperador bizantino Justiniano conseguiu a reconquista temporária de grande parte do Império Romano do Ocidente.<br/>→ compilação das leis romanas, o <br/><em>Corpus Juris Civilis</em> (do latim, “Corpo do Direito Civil”)<br/>→ contrução da Catedral de Santa Sofia<br/>→ <br/><mark class="highlight-blue_background"><strong>Cesaropapismo</strong></mark> (Sistema político-religioso exclusivo do Império do Oriente, onde o imperador passa a ser o principal chefe da Igreja, ao contrário do Ocidente onde o papa é o chefe da Igreja, o bispo de Roma).</li></ul><ul id="18927285-e2c5-8056-8a15-c7cbd2cbc784" class="bulleted-list"><li style="list-style-type:disc">século VII: A transição formal para o grego como idioma oficial do Império, devido a enorme influência helênica.</li></ul><ul id="18927285-e2c5-805d-a5a5-de6920a6f62f" class="bulleted-list"><li style="list-style-type:disc">séculos VII - VIII: crescentes pressões nas fronteiras orientais e ocidentais do Império, que se encolheu progressivamente</li></ul><ul id="18927285-e2c5-80b2-8e99-d28fdcac728f" class="bulleted-list"><li style="list-style-type:disc">séculos VIII - IX: iconoclastia (tornada oficial pelo imperador do oriente, Leão III), movimento de destruição de imagens, tidas como indutoras da idolatria segundo algumas interpretações bíblicas.<br/>→ ativou divergências com o comando papal sediado em Roma (que condenava os iconoclastas, por medo da perda da supremacia imperial por parte monges do ocidente, confeccionistas dos ícones).<br/></li></ul><ul id="18927285-e2c5-8056-8a68-d268814fa64b" class="bulleted-list"><li style="list-style-type:disc">1054: <mark class="highlight-blue_background"><strong>Cisma do Oriente</strong></mark> (ocasionada pela luta de poder entre o papa [ocidente] e o imperador [oriente], e divergências quanto a vários dogmas defendidos pelo papa)<br/>→ Ocidente (sede em Roma): Igreja Católica Apostólica Romana, liderada pelo papa<br/>→ Oriente (sede em Constantinopla): Igreja Ortodoxa, liderada pelo imperador<br/></li></ul><ul id="18927285-e2c5-809b-9780-c737cf50f83b" class="bulleted-list"><li style="list-style-type:disc">1453: desagregação do Império Bizantino, quando os turcos otomanos tomam Constantinopla.</li></ul><p id="18927285-e2c5-8028-8400-f970a19abda4" class="">
+</p></details></li></ul><ul id="18927285-e2c5-801c-ab7b-caf536f5c13f" class="toggle"><li><details open=""><summary>Os árabes</summary><p id="18a27285-e2c5-80e8-a6be-d60aeea82395" class="">A península Arábica é uma região desértica, com poucas áreas propícias ao estabelecimento de núcleos de povoamente permanente. Seus primeiros habitantes foram diversas tribos nômades semitas (bedúinos).<br/>→ tribos sedentárias urbanas: surgem ao sul da península Arábica, próximas a faixa costeira do mar Vermelho, que possbilita a maior fertilidade do solo e melhores condições climáticas. As principais cidades eram e Iatreb e Meca (onde ficava a Caaba, santuário em que se depositavam imagens dos diversos ídolos representando os deuses das tribos árabes).<br/></p><p id="18927285-e2c5-80d1-bd1a-c43feea037df" class="">
+</p><p id="18927285-e2c5-80ea-8e07-e5ea425d86db" class=""><strong><span style="border-bottom:0.05em solid">Islamismo:</span></strong> foi criado por Muhammad (Maomé), nascido em 570 e oriundo de família humilde da tribo coraixita (tribo que detinha o poder em Meca). Maomé condenava a peregrinação das tribos até Meca para idolatrar os vários deuses na Caaba, defendendo a peregrinação para a crença num deus único, Alá (seus fundamentos foram reunidos no Corão ou Alcorão, enormemente influenciado pelas mitologias judaica e cristã).</p><ul id="18927285-e2c5-80f2-9d6a-df944ba655f3" class="toggle"><li><details open=""><summary>Hégira (622) → marca o início do calendário muçulmano</summary><p id="18927285-e2c5-8027-ac17-e51187010a13" class="">Esse evento representa a fuga de Maomé e seus seguidores para a cidade vizinha de Iatreb (que teve seu nome alterado para Medina, que significa “a cidade do profeta”) após serem expulsos pelos coraixitas que se sentiram ameaçados e repudiaram a nova crença.</p><p id="18927285-e2c5-80ff-a068-e17febd99c1e" class="">Bem recebido em Iatreb, o profeta conseguiu o apoio dos comerciantes locais e a ajuda dos beduínos, que formaram um exército para conquistar Meca. Em pouco tempo, todos os povos árabes da península converteram-se ao islamismo, o que os unificou.</p><p id="18927285-e2c5-80a6-9d1f-e6ee3e3b33ea" class="">
+</p></details></li></ul><ul id="18927285-e2c5-801c-b513-e9822e9c0d22" class="toggle"><li><details open=""><summary>Jihad (632 - ) → “guerra santa”</summary><p id="18927285-e2c5-8061-b9f5-ddc23e6bc211" class="">Após a morte de Maomé (632), se intensifica o esforço em busca da fé perfeita em sua própria consciência e na daqueles que ainda não a conhecem.</p><p id="18927285-e2c5-8022-bf78-f8518f0065a0" class="">Esse empenho é chamado no islamismo de <em>jihad</em>,  “guerra santa” contra infiéis ou inimigos do islã.</p><p id="18927285-e2c5-8028-8dd4-e502c55e98e5" class="">
+</p></details></li></ul><p id="18a27285-e2c5-8071-83fd-e380ded64968" class="">
+</p><hr id="18927285-e2c5-8058-ae22-d3cc2d4a4853"/><p id="18927285-e2c5-8028-be93-e65f66667318" class="">
+</p><figure id="18927285-e2c5-8054-9f9f-ee02f4d62adc" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-28_202117.png"><img style="width:625.96875px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-01-28_202117.png"/></a></figure><p id="18927285-e2c5-803c-a222-fee30cf3b7fa" class="">Conquistada Meca, o Império Islâmico começava a se formar, conduzido pelo poder dos califas (líderes políticos e religiosos). A expansão do Império se iniciou pelos vizinhos territórios bizantinos e persas, depois avançou também para o Ocidente (tomando o norte da África e chegando à península Ibérica).</p><ul id="18927285-e2c5-80db-972e-cc687b27015a" class="bulleted-list"><li style="list-style-type:disc">661-750: dinastia Omíada</li></ul><ul id="18927285-e2c5-8006-a8c2-ec6b784cd591" class="bulleted-list"><li style="list-style-type:disc">732: Batalha de Poitiers (os francos detém a expansão árabe em direção à Europa ocidental)</li></ul><ul id="18927285-e2c5-80ab-8dce-e80562303dc4" class="bulleted-list"><li style="list-style-type:disc">750: a dinastia Abássida, substitui a Omíada. Ocorre a quebra da unidade do Império, dando origem a califados independentes. Isso deu origem à divisão religiosa em duas seitas principais (sunitas e xiitas).<br/>→ sunitas (maioria): baseavam sua crença no Suna (livro de preceitos estabelecidos por Maomé); acreditam que o califa deveria ser escolhido pela comunidade.<br/>→ xiitas (minoria): os xiitas (do árabe, “seguidores de Ali”, primo e genro de Maomé); acreditam que o califa deve ser alguém que descendesse da linhagem direta de Maomé, exercendo o poder de maneira absoluta. Seguiam as determinações dos aiatolás (membros mais importantes dos <br/><em>mujtahids</em>).</li></ul><p id="18927285-e2c5-8083-b5bf-e7540eaa0e47" class="">
+</p><hr id="18927285-e2c5-8019-b7a6-d1b604628180"/><p id="18927285-e2c5-8060-a12c-cf20e53c5706" class="">
+</p><p id="18927285-e2c5-8092-9253-ef42c9e05c4a" class="">A expansão pela bacia do Mediterrâneo, o controle que obtiveram sobre a região e as constantes incursões realizadas no litoral sul da Europa intensificaram o declínio comercial e a ruralização na Europa ocidental. Assim, as ações dos povos árabes foram um dos fatores que impulsionaram o início do feudalismo.</p><p id="18927285-e2c5-8057-8735-ca8061cfd5b8" class="">
+</p></details></li></ul><p id="18927285-e2c5-80a0-9671-fba5eb210150" class="">
+</p></details></li></ul><ul id="17327285-e2c5-8080-aa4d-ee30a8e3168f" class="toggle"><li><details open=""><summary>Capítulo 6: A Idade Média na Europa ocidental</summary><p id="18e27285-e2c5-80a6-907d-d84f73a79957" class="">Principais características:</p><ul id="18e27285-e2c5-80b3-abe4-d9fbab9a68f2" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Ruralização:</strong></mark> desde o final do Império Romano, as cidades vinham sendo abandonadas por causa das invasões e dos saques.</li></ul><ul id="18e27285-e2c5-8041-bfd1-fdfed1572154" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Feudalismo (especialmente a partir do século IX):</strong></mark> A falta de mão de obra escrava atraía vastos contingentes de trabalhadores para o campo, que arrendavam terras na condição de servos, marcando a volta a uma economia rural de subsistência.<br/>→ construção de castelos e fortes: serviam para proteger-se da agressão externa<br/></li></ul><ul id="18e27285-e2c5-805b-b464-fffa75760c02" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Declínio comercial:</strong></mark> Ocorreu devido à instabilidade causada pelas guerras e à consequente ruralização.</li></ul><ul id="18e27285-e2c5-8072-808d-edbecedafa1b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Fortalecimento do cristianismo:</strong></mark><mark class="highlight-default_background"> Quando o Império Romano do Ocidente se desagregou, desapareceu a ideia de Estado de bem público. A terra passou a ser distribuída entre o clero e a nobreza (como recompensa por serviços prestados).</mark><mark class="highlight-blue_background"><strong><br/><br/></strong></mark>→ vários reinos bárbaros converteram-se à doutrina cristã.</li></ul><p id="18f27285-e2c5-808b-b12f-c71f99f37fb1" class="">
+</p><hr id="18f27285-e2c5-80ba-a8e0-fbd91f5d8966"/><p id="18f27285-e2c5-80fb-b5cc-fe56c0ec34b9" class="">
+</p><p id="18e27285-e2c5-80b4-878e-c35f07490115" class="">Períodos da Idade Média:</p><ul id="18e27285-e2c5-80da-a246-d4ddc359ed4d" class="toggle"><li><details open=""><summary>Alta Idade Média (séculos V - X)</summary><p id="18e27285-e2c5-80ee-b9e6-c44c897ae7f2" class="">As migrações bárbaras, que marcaram o fim do Império Romano do Ocidente em 476 continuaram ocorrendo durante boa parte da Alta Idade Média.</p><p id="18e27285-e2c5-8056-994e-cc36359b1d3b" class=""><strong><span style="border-bottom:0.05em solid">Os reinos bárbaros:</span></strong> O contato da Europa ocidental com os povos migrantes e a fragmentação político-cultural nos antigos domínios romanos acarretaram o surgimento de vários reinos bárbaros.</p><ul id="18e27285-e2c5-80b8-ac3f-fcd231e11b35" class="toggle"><li><details open=""><summary>Reino dos francos (reino de maior destaque)</summary><p id="18e27285-e2c5-80dc-a711-c76e77119831" class="">Desde o século II, os francos vinham pressionando as fronteiras do Império Romano, até se estabelecerem na região da Gália (atual França).</p><p id="18e27285-e2c5-80ed-8453-f96d3dacbf74" class="">
+</p><ul id="18e27285-e2c5-8078-8783-cdfb43e913d2" class="bulleted-list"><li style="list-style-type:disc">496: o consolidador da dinastia merovíngia, <mark class="highlight-blue_background"><strong>Clóvis</strong></mark> (neto de Meroveu) foi convertido ao cristianismo.<br/>→ “reis indolentes”: se referem aos demais monarcas da dinastia merovíngia, sendo chamados assim por sua falta de poder político que foi enfraquecido. Suas funções eram delegadas ao <br/><em>major domus</em> (líder militar e administrativo do reino).</li></ul><ul id="18e27285-e2c5-8001-a9c1-c7ce9cffff33" class="bulleted-list"><li style="list-style-type:disc"> 732: <mark class="highlight-blue_background"><strong>Carlos Martel</strong></mark> (o mais famoso <em>major domus</em>) comandou os francos na <strong>Batalha de Poitiers</strong> e interrompeu a expansão árabe em direção ao centro do continente.</li></ul><ul id="18e27285-e2c5-8038-bb9d-fcbf84baa838" class="bulleted-list"><li style="list-style-type:disc">751: <mark class="highlight-blue_background"><strong>Pepino, o Breve</strong></mark> (filho de Carlos Martel) contando com o apoio do papa, depôs o último soberano merovíngio e deu início a dinastia carolíngia.<br/>→ Pepino cedeu territórios para a Igreja, “Patrimônio de São Pedro” (atual vaticano)<br/></li></ul><ul id="18e27285-e2c5-8082-98bd-ca300305a8d0" class="bulleted-list"><li style="list-style-type:disc">768: <mark class="highlight-blue_background"><strong>Carlos Magno</strong></mark> (filho de Pepino) assume o trono e funda o Império Carolíngio; esse foi o período de maior poder dos francos.<br/>→ divisão do território em condados e marcas, doados aos <br/><em>missi dominici</em> (”emissários do senhor”) e nobreza, em troca de lealdade<br/>→ “capitulares”: criadas as primeiras leis escritas do Ocidente medieval<br/><br/><mark class="highlight-default_background">→</mark><mark class="highlight-default_background"><strong> </strong></mark><mark class="highlight-teal_background"><strong>Renascimento carolíngio</strong></mark> (preservação da Antiguidade greco-romana com importante atuação da Igreja, que logo teria o monopólio cultural na Europa)</li></ul><ul id="18f27285-e2c5-8091-848e-e2ce960e5cb9" class="bulleted-list"><li style="list-style-type:disc">800: O título de Imperador do <mark class="highlight-red_background"><strong>Novo Império Romano do Ocidente</strong></mark> (simbolizando uma tentativa de restaurar a autoridade do antigo Império Romano do Ocidente que havia caído) foi concedido a Carlos Magno pelo papa Leão III.<br/>→ a Igreja via na ampliação do reino franco uma possibilidade de expansão do cristianismo e o retorno à própria concepção de império<br/></li></ul><ul id="18f27285-e2c5-80b5-b3e5-c02881f63e96" class="bulleted-list"><li style="list-style-type:disc">814: <mark class="highlight-blue_background"><strong>Luís, o Piedoso</strong></mark> (filho de Carlos Magno) herda o Império após a morte do pai.<br/>→ começa o declínio do Império<br/></li></ul><ul id="18f27285-e2c5-808f-90dc-fe2efa6999f2" class="bulleted-list"><li style="list-style-type:disc">843: os filhos de Luís o Piedoso, pelo <strong>Tratado de Verdun</strong>, fizeram a partilha do Império e aceleraram a sua derrocada.<ul id="19527285-e2c5-8088-a8c8-f7df33e26929" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue_background"><strong>Carlos, o Calvo</strong></mark> ficou com a Frância Ocidental<br/>→ 987: a região viria a ser o Reino da França<br/></li></ul><ul id="19527285-e2c5-80e7-a081-ef2a3546c758" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue_background"><strong>Lotário I</strong></mark> ficou com a Frância Central e a região da Lotaríngia<br/>→ não se unificou em um só Império<br/></li></ul><ul id="19527285-e2c5-809d-b180-c33e1fb7d58c" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue_background"><strong>Luís, o Germânico</strong></mark> ficou com a Frância Oriental<br/>→ 962: a região viria a ser o Sacro Império Romano-Germânico (surge como uma nova tentativa de restaurar o antigo Império Romano do Ocidente, porém não mais sob domínio franco)<br/></li></ul></li></ul><ul id="18f27285-e2c5-80c6-9244-eb237507dec4" class="bulleted-list"><li style="list-style-type:disc">século IX - : fragmentação do Império carolíngio, nova onda de invasões tomava a Europa ocidental. Eram os nórdicos (vikings), magiares, húngaros, muçulmanos, etc<br/>→ ocorreu ainda mais a descentralização (populações buscando refúgio e proteção subordinavam-se aos grandes senhores de terras), fortalecendo o feudalismo.<br/></li></ul><p id="19527285-e2c5-8040-92d2-d725b02a71a1" class="">
+</p></details></li></ul><p id="18e27285-e2c5-8069-9a15-eb2283410372" class="">
+</p></details></li></ul><ul id="18e27285-e2c5-80a9-819e-ce653e364686" class="toggle"><li><details open=""><summary>Baixa Idade Média (séculos XI - XV)</summary><p id="19527285-e2c5-8067-93cf-c2491fb246b1" class="">No início da Baixa Idade Média (principalmente nos séculos X - XI), as condições de vida se tornaram mais estáveis, principalmente devido a diminuição das invasões.</p><p id="19627285-e2c5-80dc-b1ab-d88c11acf302" class="">Com isso, algumas características desse período são:</p><ul id="19527285-e2c5-807f-8ee3-c4bdf14e2fd6" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>surto demográfico</strong></mark> em várias partes da Europa<br/>→ muitos aldeões (servos) devido ao aumento das taxações dos senhores feudais foram marginalizados ou até mesmo expulsos dos feudos.<br/>→ muitos nobres ficam sem terra (após a criação do <br/><mark class="highlight-default_background">direito de primogenitura), </mark>se tornando cavaleiros e a vagando pela Europa vendendo seus serviços a outros senhores.</li></ul><ul id="19527285-e2c5-80c0-8fd4-c7e6d637e6d3" class="bulleted-list"><li style="list-style-type:disc">a agricultura e o artesanato são impulsionadas para suprir a nova demanda<br/>→ o imobilismo feudal e sua autossuficiencia começam a se tornar insustentáveis<br/>→ muitos servos tentando sobreviver, fugiam para bosques e antigos centros urbanos abandonados e com isso eram perseguidos pelos nobres (devido à sua ligação ao feudo e suas obrigações nela).<br/></li></ul><p id="19527285-e2c5-80ec-a9ef-d0385e8a9217" class="">
+</p><hr id="19527285-e2c5-80d4-8edb-ec2ec791b300"/><p id="19527285-e2c5-8076-83e9-d805450dc237" class="">
+</p><figure id="19527285-e2c5-80fb-b7cd-e42130273581" class="image"><a href="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-02-09_203646.png"><img style="width:653.984375px" src="Histo%CC%81ria%2016527285e2c5801eb183e27b962292ac/Screenshot_2025-02-09_203646.png"/></a></figure><p id="19527285-e2c5-803b-a96c-f308ff22a211" class=""><strong><span style="border-bottom:0.05em solid">O movimento cruzadista:</span></strong> as Cruzadas foram expedições militares organizadas pela<br/>Igreja Católica, com o apoio de nobres e reis europeus. No <br/><mark class="highlight-blue_background"><strong>Concílio de Clermont</strong></mark> (1095), o Papa Urbano II foi quem convocou oficialmente a Primeira Cruzada rumo ao Oriente, chamando os cristãos para lutar contra os “infiéis” (quaisquer não-cristãos).<br/>→ <br/><mark class="highlight-red_background"><strong>pretexto:</strong></mark> propagar o cristianismo para o Oriente. E também reconquistar a Região da Palestina, onde estava Jerusalém, “a Terra Santa” (conceito central no para a mitologia cristã). Havia também o pedido de ajuda do Império Bizantino no combate aos turcos seljúcidas que em seu processo expansionista estavam ameaçando o reduto cristão bizantino.<br/>→ <br/><mark class="highlight-teal_background"><strong>objetivo principal:</strong></mark> Conquistar novas terras (para suprir a demanda de alimentar a crescente população), em especial a Palestina dominada pelos Muçulmanos (Árabes e outros povos unidos politicamente pelo Islã) desde o século VII. A Igreja Católica queria aproveitar para estender sua influência no território bizantino (dominado pela Igreja Ortodoxa independente do papa de Roma).<br/>→ <br/><mark class="highlight-teal_background"><strong>objetivo secundário:</strong></mark> comércio (atividade crescente em meio ao surto demográfico), especialmente de negociantes italianos que desejavam conquistar entrepostos e vantagens no comércio de produtos orientais, bem como o acesso às rotas comerciais do mar Mediterrâneo (muitas dominadas por povos muçulmanos).</p><ul id="19627285-e2c5-807f-be75-d21d1012c44f" class="toggle"><li><details open=""><summary>Composição das expedições</summary><p id="19627285-e2c5-8020-9aaa-eae468321ce0" class="">Os milhares de indivíduos de alguma maneira excluídos da estrutura social feudal foram essenciais na montagem dessas expedições. A espinha dorsal dos exércitos cruzados era formada por cavaleiros sem terra, enquanto a maior parte das tropas a pé era constituída de antigos servos.</p><p id="19627285-e2c5-8015-9fef-ec47b368e41a" class="">Além disso, milhares de pessoas, incluindo mulheres, crianças e idosos, dispunham-se a seguir os cruzados e fazer a peregrinação aos locais sagrados após a expulsão dos muçulmanos.</p><p id="19627285-e2c5-806d-a53e-da34d1a002b5" class="">
+</p></details></li></ul><p id="19627285-e2c5-8088-bf9a-eb9938fbfcc8" class="">
+</p><p id="19627285-e2c5-8089-a6b4-c5d2bd75f86a" class="">Enquanto as Cruzadas alcançaram alguns objetivos no curto prazo (como a captura temporária de Jerusalém), a longo prazo, elas não conseguiram resolver todas as dificuldades europeias.</p><p id="19627285-e2c5-8065-b564-f98f00831789" class="">Resultados das cruzadas:</p><ul id="19627285-e2c5-80fc-97ce-dbd361317280" class="bulleted-list"><li style="list-style-type:disc">um papel significativo na mentalidade europeia, dando ideias do que <mark class="highlight-red_background"><strong>viria a ser o imperialismo ocidental</strong></mark>, que iria revelar-se de modo mais incisivo nos séculos seguintes.<br/>→ construção da imagem dos europeus como capazes de impor sua visão de mundo e seus valores a todos os povos (considerados “os outros”)<br/>→ aumento da violência contra não-cristãos<br/></li></ul><ul id="19627285-e2c5-8061-b7eb-d06048f52933" class="bulleted-list"><li style="list-style-type:disc">Reconquista cristã da Península Ibérica (dominada pelos Árabes), o que incentivou as Grandes Navegações rumo à América.</li></ul><p id="19627285-e2c5-8099-be08-de34a0fd329e" class="">
+</p><ul id="19627285-e2c5-80a7-bc7f-e2d7c5203c0d" class="toggle"><li><details open=""><summary>Outras Cruzadas: dos Mendigos (1096) e das Crianças (1212)</summary><p id="19627285-e2c5-80db-af0e-d23250d6fa66" class="">O misticismo e a espiritualidade que impregnavam a época medieval são plenamente visíveis na Cruzada das Crianças (1212), organizada com base na crença de que somente os “puros” e “inocentes” pode riam libertar Jerusalém. O mesmo aconteceu no início do movimento cruzadista, na chamada Cruzada dos Mendigos (1096).</p><p id="19627285-e2c5-80ec-b7cb-e1ec0a3c4d66" class="">Ambas foram dizimadas (principalmente no percurso europeu).</p><p id="19627285-e2c5-80f3-a501-ddea336c0cdf" class="">
+</p></details></li></ul><p id="19627285-e2c5-8024-9d07-f5dafd3cf67b" class="">
+</p><hr id="19527285-e2c5-8097-ae45-ca99d607b595"/><p id="19627285-e2c5-802d-99f5-cc2a7aa1396f" class="">
+</p><p id="19627285-e2c5-80c4-895b-fd3255e6f43f" class="">
+</p><p id="19527285-e2c5-8022-9985-e719a47a8592" class="">
+</p><p id="19527285-e2c5-8003-8049-dd10924fcc9f" class="">
+</p><p id="19027285-e2c5-8094-adf0-cf38c6c13946" class="">
+</p><p id="19027285-e2c5-80bb-8385-fbd18bf60957" class="">
+</p></details></li></ul><p id="18b27285-e2c5-8025-ab3c-f11f69c9c2ff" class="">
+</p></details></li></ul><ul id="18b27285-e2c5-80af-8978-fbc95f0880a4" class="toggle"><li><details open=""><summary>Capítulo 7: Outras Idades Médias</summary><ul id="18b27285-e2c5-8030-aa80-c9a99f76729e" class="toggle"><li><details open=""><summary>Na África</summary></details></li></ul><ul id="18b27285-e2c5-8075-94fd-d5f665b234e2" class="toggle"><li><details open=""><summary>Na China</summary></details></li></ul><p id="18b27285-e2c5-80ed-8f8e-c1bbda7f6a74" class="">
+</p></details></li></ul><ul id="18a27285-e2c5-8088-a7a2-cd3715cf994e" class="toggle"><li><details open=""><summary>início da primeira modernidade</summary></details></li></ul><ul id="18427285-e2c5-80b9-9e93-dbc7417f5d43" class="toggle"><li><details open=""><summary>Capítulo 6: Religião e monarquia na Época Moderna</summary></details></li></ul><ul id="18427285-e2c5-80f5-a93e-dd48b476147a" class="toggle"><li><details open=""><summary>Capítulo 7: O Século XVIII - a Revolução Industrial e o Iluminismo</summary></details></li></ul><ul id="18427285-e2c5-80c3-84cb-f69914854843" class="toggle"><li><details open=""><summary>Capítulo 8: As revoluções atlânticas</summary></details></li></ul><ul id="18427285-e2c5-80e8-b152-c2adce3a469d" class="toggle"><li><details open=""><summary>Capítulo 9: O longo século XIX</summary></details></li></ul><ul id="18427285-e2c5-8053-b812-e37e55cbbaf6" class="toggle"><li><details open=""><summary>Capítulo 10: A Paz Armada e a Primeira Guerra Mundial</summary></details></li></ul><ul id="18427285-e2c5-8095-943d-e80f99cca0f4" class="toggle"><li><details open=""><summary>Capítulo 11: A Revolução Russa e a União Soviética até 1945</summary></details></li></ul><ul id="18427285-e2c5-80fb-a7c3-fded15ac01c9" class="toggle"><li><details open=""><summary>Capítulo 12: O período entreguerras</summary></details></li></ul><ul id="18427285-e2c5-80be-945a-dda73a8c2e76" class="toggle"><li><details open=""><summary>Capítulo 13: Segunda Guerra Mundial e mundo comtemporâneo</summary></details></li></ul><p id="17227285-e2c5-8044-9e63-e590784a9c0f" class="">
+</p><h2 id="17227285-e2c5-800f-819c-ff14e84a8245" class=""><mark class="highlight-teal_background">História do Brasil</mark></h2><ul id="18427285-e2c5-809b-b535-d500ec4e999e" class="toggle"><li><details open=""><summary>Capítulo 1: A formação dos impérios ibéricos</summary></details></li></ul><ul id="18427285-e2c5-8071-8b9c-fda99ed8c49b" class="toggle"><li><details open=""><summary>Capítulo 2: A formação das estruturas coloniais</summary></details></li></ul><ul id="18427285-e2c5-8066-ac89-ddc214107fec" class="toggle"><li><details open=""><summary>Capítulo 3: Da crise do açúcar ao apogeu do sistema colonial no Brasil</summary></details></li></ul><ul id="18427285-e2c5-8016-9ee5-d1ee65668389" class="toggle"><li><details open=""><summary>Capítulo 4: A emancipação da América</summary></details></li></ul><ul id="18427285-e2c5-8032-a32f-d05cb3a40044" class="toggle"><li><details open=""><summary>Capítulo 5: Primeiro Reinado</summary></details></li></ul><ul id="18427285-e2c5-80c5-ace3-dd9b9f2d84c7" class="toggle"><li><details open=""><summary>Capítulo 6: Período Regencial</summary></details></li></ul><ul id="18427285-e2c5-80b0-9e35-cf6a273090e1" class="toggle"><li><details open=""><summary>Capítulo 7: Segundo Reinado</summary></details></li></ul><ul id="18427285-e2c5-804b-b012-c49f86eace32" class="toggle"><li><details open=""><summary>Capítulo 8: Primeira República</summary></details></li></ul><ul id="18427285-e2c5-80c8-9955-c57d14044cc4" class="toggle"><li><details open=""><summary>Capítulo 9: Era Vargas</summary></details></li></ul><ul id="18427285-e2c5-8078-b534-c9647f7f8c5c" class="toggle"><li><details open=""><summary>Capítulo 10: Populismo na América Latina</summary></details></li></ul><ul id="18427285-e2c5-802f-9660-da9842229b63" class="toggle"><li><details open=""><summary>Capítulo 11: República Democrática (1946 - 1964)</summary></details></li></ul><ul id="18427285-e2c5-804a-9b68-f540a33a24e3" class="toggle"><li><details open=""><summary>Capítulo 12: As ditaduras no Brasil e na América Latina</summary></details></li></ul><ul id="18427285-e2c5-8025-b33c-e00a07a16575" class="toggle"><li><details open=""><summary>Capítulo 13: As Nova República (1985 - )</summary></details></li></ul><p id="16527285-e2c5-802b-99b8-e23bd0344d39" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

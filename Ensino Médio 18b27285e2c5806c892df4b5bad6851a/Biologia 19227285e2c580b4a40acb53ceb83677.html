@@ -1,0 +1,722 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Biologia</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="19227285-e2c5-80b4-a40a-cb53ceb83677" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🧬</span></div><h1 class="page-title">Biologia</h1><p class="page-description"></p></header><div class="page-body"><ul id="19227285-e2c5-8085-b5f6-ef8e2bfef92b" class="toggle"><li><details open=""><summary>Referências</summary><ul id="19227285-e2c5-8071-b3fe-e7b87ca03a1b" class="bulleted-list"><li style="list-style-type:disc"><a href="https://annas-archive.org/search?q=biologia+moderna+amabis+e+martho">Biologia Moderna (2016) - José Mariano Amabis, Gilberto Rodrigues Martho</a><br/>→ melhor livro de biologia do ensino médio (quase todo o conteúdo veio daqui)<br/></li></ul><p id="19227285-e2c5-802d-a48a-fc497e5add94" class="">
+</p></details></li></ul><ul id="19327285-e2c5-806e-aacf-e1952cfe91b4" class="toggle"><li><details open=""><summary>Conceitos complementares</summary><ul id="19227285-e2c5-805e-8d75-e6d8d0d97a2e" class="toggle"><li><details open=""><summary>O que é Biologia?</summary><p id="19227285-e2c5-807f-a491-feb09a50a62d" class="">O termo Biologia vem do grego (<em><strong>bíos:</strong></em> “vida”<strong>, </strong><em><strong>lógos:</strong></em><strong> </strong>“estudo”<strong>).</strong></p><p id="19327285-e2c5-80c3-bd01-da8962e480bd" class="">Biologia é a ciência que tem como objetivo o estudo da vida, dos seres vivos.</p><p id="19227285-e2c5-801b-b19d-d8429a1b50d7" class="">
+</p></details></li></ul><ul id="19327285-e2c5-80f7-a957-d8b60e9d1130" class="toggle"><li><details open=""><summary>Níveis de Organização Biológica</summary><p id="19327285-e2c5-80ad-9a27-d4b71bc3d73b" class="">Átomos → Moléculas → Organelas → Células → Tecidos → Órgãos → Sistemas → Organismos → Populações → Comunidades → Ecossistemas → Biosfera</p><p id="19327285-e2c5-8063-8dab-de95b675e3d5" class="">
+</p></details></li></ul><p id="19327285-e2c5-8073-9300-cb770fcc7ec4" class="">
+</p></details></li></ul><p id="19327285-e2c5-80ca-b5e3-f814a6a0ce97" class="">
+</p><ul id="19327285-e2c5-8032-b094-c07a4f7b0c08" class="toggle"><li><details open=""><summary>Capítulo 1: O que é vida?</summary><p id="19327285-e2c5-80b9-88a4-d0ff9c936383" class="">Muitos biólogos têm se empenhado no desafio de definir “vida”; entretando, nenhuma das definições formuladas até hoje é plenamente satisfatória, principalmente devido à própria complexidade do fenômeno vida, que se manifesta de muitas formas.<br/>→ para a MAIORIA dos biólogos os vírus não são seres vivos (não seguem os critérios 2, 3,<br/>4 [parcialmente] e 6 [parcialmente])<br/></p><p id="19327285-e2c5-8032-a94a-e45f9849b5ba" class="">
+</p><p id="19327285-e2c5-80cc-a9ec-fc0acee765c6" class="">Entre os atributos mais típicos dos seres vivos, destacam-se:</p><ul id="19327285-e2c5-8059-8801-fe4d10a362c8" class="toggle"><li><details open=""><summary>1 - Composição química</summary><p id="19327285-e2c5-8026-bad9-c3ac48eae032" class="">Na matéria viva, certos elementos químicos estão sempre presentes:</p><p id="19327285-e2c5-80a7-ba4e-c0eceea50f73" class=""><strong>carbono (C)</strong>, <strong>hidrogênio (H)</strong>, <strong>oxigênio (O)</strong>, <strong>nitrogênio (N)</strong>, <strong>fósforo (P)</strong> e <strong>enxofre (S)</strong>.</p><p id="19327285-e2c5-80bb-9a69-fd2ff1010af5" class="">
+</p><p id="19327285-e2c5-80c4-9a73-fc6e5fc7a148" class="">Dezenas, centenas e mesmo milhões de átomos desses (CHONPS) e de outros elementos químicos, unidos por meio de ligações químicas, formam as moléculas contituintes dos seres vivos, genericamente chamadas de <mark class="highlight-blue_background"><strong>moléculas orgânicas</strong></mark> (proteínas, glicídios, lipídios, ácidos nucleicos, etc…).</p><p id="19327285-e2c5-8041-bf4f-c54a12c528e6" class="">
+</p></details></li></ul><ul id="19327285-e2c5-80c7-be07-f850710cdcb4" class="toggle"><li><details open=""><summary>2 - Organização celular</summary><p id="19327285-e2c5-80c8-a7dc-e4e8e8b8a23a" class="">A célula é a <strong><span style="border-bottom:0.05em solid">unidade fundamental da vida</span></strong>.</p><p id="19327285-e2c5-8019-a8b3-fb0719daf017" class="">
+</p><p id="19327285-e2c5-8029-b947-d452a9f6f75c" class="">há dois tipos básicos de células:</p><ul id="19327285-e2c5-8043-8f8d-fedf1281923c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>célula procariótica:</strong></mark> não há compartimentos membranosos internos.<br/>→ o material genético encontra-se livre no conteúdo celular<br/></li></ul><ul id="19327285-e2c5-80b7-9d11-efde643ae3cd" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>célula eucariótica:</strong></mark> apresenta compartimentos membranosos internos (entre eles, o núcleo).<br/>→ o material genético se localiza no núcleo<br/></li></ul><p id="19327285-e2c5-800c-ad68-cc08df8a73ee" class="">
+</p></details></li></ul><ul id="19327285-e2c5-8052-9e7d-faf005b6cd5f" class="toggle"><li><details open=""><summary>3 - Metabolismo e Crescimento</summary><p id="19327285-e2c5-8022-bf9a-cd7c83d87a71" class="">Metabolismo (do grego <em><strong>metabole</strong></em>, “mudança”) é o conjunto de reações químicas que mantém a vida:</p><ul id="19327285-e2c5-8030-b55c-ced8262154f1" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>anabolismo (metabolismo construtivo):</strong></mark> síntese de biomoléculas</li></ul><ul id="19327285-e2c5-80e1-9b9c-d4cef18c21c4" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>catabolismo (metabolismo oxidativo):</strong></mark> degradação de biomoléculas</li></ul><p id="19427285-e2c5-8040-93d0-eea5e73974ae" class="">
+</p><hr id="19427285-e2c5-801d-80df-e045a2accf91"/><p id="19427285-e2c5-8080-9a17-f24143e00d6e" class="">
+</p><p id="19427285-e2c5-8010-8569-dc8b074d5cef" class="">O crescimento de um ser vivo ocorre sempre pela produção organizada de substâncias<br/><br/><strong><span style="border-bottom:0.05em solid">por meio do metabolismo</span></strong> celular. Esses seres podem ser:</p><ul id="19427285-e2c5-803a-a1d8-fbdfdb2d4305" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Seres Unicelulares (constituídos por uma única célula):</strong></mark> crescem pelo tamanho de sua única célula.</li></ul><ul id="19427285-e2c5-804c-adcf-d9c8b1425e62" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Seres Multicelulares/Pluricelulares (constituídos por mais de uma célula):</strong></mark> surgem a partir de uma única célula (ou grupo de células), crescendo principalmente pelo aumento do número de células do corpo.</li></ul><p id="19327285-e2c5-80cc-9785-e4a84c1abc65" class="">
+</p></details></li></ul><ul id="19327285-e2c5-8002-9d2f-f968deedcbbe" class="toggle"><li><details open=""><summary>4 - Reprodução</summary><p id="19327285-e2c5-80fd-891a-d9b6a68830ee" class="">Costuma-se distinguir dois modos básicos de reprodução na qual novos seres surgem:</p><ul id="19327285-e2c5-8047-971a-f539cec5a435" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Reprodução Assexuada:</strong></mark> se dá a partir de uma célula ou grupo de células produzido por um único organismo genitor.<br/>→ resultado: os organismos filhos recebem as mesmas instruções genéticas presentes no genitor e geralmente são idênticos a ele.<br/></li></ul><ul id="19327285-e2c5-8096-8ec7-e92a0f62721e" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Reprodução Sexuada:</strong></mark> se dá a partir de uma única célula (zigoto), originado pela união (fecundação) de duas células sexuais (gametas), produzidas por um ou dois organismos genitores.<ul id="19327285-e2c5-801d-b2b0-ff4cef724444" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple_background"><strong>autofecundação (mais raro):</strong></mark> gametas provenientes do mesmo genitor.<br/>→ resultado: os organismos filhos são geneticamente semelhantes, mas não idênticos (como seria na reprodução assexuada).<br/></li></ul><ul id="19327285-e2c5-80a8-9a18-fa2525223dcf" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-purple_background"><strong>fecundação cruzada (mais comum):</strong></mark> gametas provenientes de dois indivíduos genitores.<br/>→ resultado: os organismos filhos recebem as instruções genéticas de dois genitores, não sendo idênticos aos pais.<br/></li></ul></li></ul><p id="19327285-e2c5-80d0-8ea2-dcd33e5b1d62" class="">
+</p></details></li></ul><ul id="19327285-e2c5-806a-b8cb-f2f2e8b94734" class="toggle"><li><details open=""><summary>5 - Hereditariedade</summary><p id="19727285-e2c5-80b8-b95f-ef030b0ef790" class="">A hereditariedade é uma característica intimamente ligada à reprodução.</p><p id="19727285-e2c5-80dc-b880-dd5da82fc63c" class="">Um ser vivo, ao se reproduzir, transmite a seus descendentes um conjunto de instruções em código, inscritas nas moléculas de material genético (ácidos nucleicos, do tipo DNA ou RNA).</p><p id="19727285-e2c5-800b-9b52-cfbdc7d20894" class="">
+</p></details></li></ul><ul id="19327285-e2c5-8098-ac48-d959eb620aa0" class="toggle"><li><details open=""><summary>6 - Reação e Movimento</summary><p id="19327285-e2c5-80fd-8727-e79ed9968ce4" class="">A reação a estímulos e a movimentação ativa são características da maioria dos seres vivos.</p><p id="19327285-e2c5-80cd-8b26-d6480d6bf036" class="">
+</p></details></li></ul><p id="19327285-e2c5-8057-bc51-c277c2f776d2" class="">
+</p></details></li></ul><ul id="19227285-e2c5-8049-bc4d-f84c33a513ab" class="toggle"><li><details open=""><summary>Capítulo 2: Origem da vida</summary><p id="19727285-e2c5-8078-bb0f-f62b850eb60c" class="">Até pouco mais de três séculos atrás, as principais explicações para nossa origem eram de caráter mitológico (o universo teria sido criado por divindades supremamente poderosas).</p><p id="19727285-e2c5-80a6-aa0c-ee2d1b59902f" class="">Ao contrário da visão <mark class="highlight-red_background"><strong>dogmática criacionista</strong></mark>, a <mark class="highlight-teal_background"><strong>ciência está em constante evolução</strong></mark> (a todo instante novas descobertas e interpretações dos fatos podem modificar a visão que temos hoje).</p><p id="19727285-e2c5-8022-add6-c9a25374d7d3" class="">
+</p><ul id="19227285-e2c5-8034-9b40-d65ce524d80e" class="toggle"><li><details open=""><summary>A origem do Universo</summary><p id="19727285-e2c5-8041-93f2-e5bca1fcc484" class=""><strong><span style="border-bottom:0.05em solid">Teoria do Big Bang:</span></strong> é atualmente a explicação mais aceita pela comunidade científica para a origem e evolução do universo. Segundo ela, o universo se originou de um ponto extremamente compacto, de densidade infinita, que, por razões ainda desconhecidas, explodiu há cerca de 13,8 bilhões de anos e se expandiu violentamente.<br/>→ nessa “explosão” primordial, denominada <br/><em>big bang</em>, teriam surgido simultaneamente o espaço, o tempo, a energia e a matéria.</p><p id="19727285-e2c5-80b2-8158-de1a7bf7cb70" class="">
+</p><hr id="19727285-e2c5-80d5-8bce-d048b81170b5"/><p id="19727285-e2c5-80b6-937d-ce335d7c1b5b" class="">
+</p><p id="19727285-e2c5-8068-948c-d4d5ea72912c" class="">Tudo indica que, imediatamente após o <em>big bang</em>, a temperatura era tão elevada que impossibilitava a existência da matéria como hoje a conhecemos. Entretanto, a rápida expansão do universo fez a temperatura diminuir; ao fim do primeiro minuto, teriam surgido núcleos atômicos de Hidrogênio (elemento mais simples e o primeiro a se formar) e Hélio.<br/>→ átomos propriamente ditos desses elementos só se formariam mais tarde (aprox. 400 mil anos depois).<br/></p><p id="19727285-e2c5-8078-901a-e5faa36f4a1d" class="">Quando o universo completou algumas centenas de milhões de anos, começaram a surgir os primeiros corpos celestes de grandes dimensões, as <mark class="highlight-blue_background"><strong>estrelas</strong></mark> (formadas basicamente por Hidrogênio e Hélio). Ao mesmo tempo, a atração gravitacional deu origem as primeiras <mark class="highlight-blue_background"><strong>galáxias</strong></mark> (conjuntos de estrelas e matéria cósmica).</p><p id="19327285-e2c5-8018-ace5-dcf6c0b3914f" class="">
+</p></details></li></ul><ul id="19727285-e2c5-80b6-925c-e885400b731e" class="toggle"><li><details open=""><summary>A origem do nosso Sistema Solar</summary><p id="19727285-e2c5-80d6-92fa-d308940a5495" class="">Os cientistas estimam que o nosso Sistema Solar (presente na galáxia denominada Via Láctea) surgiu há cerca de 4,6 bilhões de anos a partir de uma <mark class="highlight-blue_background"><strong>nebulosa</strong></mark> (aglomeração de gases e poeira interestelar, que dá origem a um sistema solar).</p><p id="19727285-e2c5-80f2-9491-ecb56e754521" class="">A atração gravitacional entre as partículas da nebulosa fez com que ela se tornasse cada vez mais compacta. Após alguns milhões de anos a temperatura no centro da nebulosa teria atingido cerca de 10.000.000° C, ocasionando reações de fusão nuclear em cadeia, com liberação de muita energia.<br/>→ no ponto central da nebulosa, a massa compactada passou a emitir luz, constituindo uma estrela amarela (o Sol)<br/>→ de forma paralela, se iniciam outras condensações (que darão origem a outros corpos do Sistema Solar, como planetas, satélites, cometas, asteroides, etc.) em pontos periféricos do disco de matéria que girava em torno do centro<br/></p><p id="19727285-e2c5-805f-95b0-dac6f18a2cce" class="">
+</p></details></li></ul><ul id="19727285-e2c5-8025-85c5-cf0dedd5c736" class="toggle"><li><details open=""><summary>A origem da Terra</summary><p id="19727285-e2c5-8093-b6fc-e94a2f8144e1" class="">Estima-se que o planeta terra se formou entre 4,6 e 4,5 bilhões de anos atrás, a partir da aglomeração de minerais, poeira cósmica e gases presentes no disco de matéria que orbitava o Sol. A agregação progressiva desse material gerou grande pressão no interior da Terra em formação e derretimento dos materiais rochosos mais internos (que escapavam para a superfície na forma de lava incandescente).<br/>→ a jovem Terra também era continuamente bombardeada por asteroides vindos do espaço, que se chocavam com a superfície terrestre, contribuindo para o aumento da temperatura<br/>→ nenhum tipo de vida como a que conhecemos hoje poderia ter existido em condições tão adversas quanto as reinantes na Terra em seus primeiros 700 milhões de anos de existência<br/></p><p id="19727285-e2c5-8092-be49-e561693f4b61" class="">
+</p><p id="19727285-e2c5-8058-97cc-f9dc9926b773" class="">A Terra em formação estava envolta por uma atmosfera constituída principalmente de:</p><ul id="19727285-e2c5-808a-bfdc-cf58181a210f" class="bulleted-list"><li style="list-style-type:disc">[70% - 80%] Gás Carbônico <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">O</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub></mrow><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(\ce{CO2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord"><span class="mord mathrm">CO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span><span>﻿</span></span></li></ul><ul id="19727285-e2c5-80f4-9a85-e9846a835da3" class="bulleted-list"><li style="list-style-type:disc">[10% - 20%] Gás Nitrogênio <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">N</mi><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{(N2)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathrm">N</span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></span><span>﻿</span></span></li></ul><ul id="19727285-e2c5-801e-b51e-e4384ba39de7" class="bulleted-list"><li style="list-style-type:disc">[10% - 20%] Vapor-d’água <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">H</mi><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>2</mn></mpadded></msub><mi mathvariant="normal">O</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{(H2O)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathrm">H</span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathrm">O</span><span class="mclose">)</span></span></span></span></span></span><span>﻿</span></span></li></ul><ul id="19727285-e2c5-8016-95fd-ccbbb0ff0d88" class="bulleted-list"><li style="list-style-type:disc">[em menores quantidades] Outros Gases<ul id="19727285-e2c5-80a8-b80b-edf2ab16c72a" class="bulleted-list"><li style="list-style-type:circle">Metano <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">H</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>4</mn></mpadded></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ce{(CH4)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mopen">(</span><span class="mord"><span class="mord mathrm">CH</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></span><span>﻿</span></span></li></ul><ul id="19727285-e2c5-80f1-a18b-e9aadc765258" class="bulleted-list"><li style="list-style-type:circle">Amônia <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">H</mi></mrow><msub><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded></msub></mrow><annotation encoding="application/x-tex">\ce{NH3}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">NH</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.55em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span></li></ul><ul id="19727285-e2c5-807b-8af2-d8dae33c595a" class="bulleted-list"><li style="list-style-type:circle">Monóxido de carbono <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">O</mi></mrow><annotation encoding="application/x-tex">\ce{CO}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord"><span class="mord mathrm">CO</span></span></span></span></span></span></span><span>﻿</span></span></li></ul></li></ul><p id="19727285-e2c5-809b-bcbf-d0c1599b930b" class="">
+</p><hr id="19727285-e2c5-8095-8513-ffb6c327b425"/><p id="19727285-e2c5-80de-ac1d-cdfe84bbd2ad" class="">
+</p><p id="19727285-e2c5-80b6-9ab9-e8d04c31666a" class="">Com o passar do tempo a superfície da Terra primitiva foi esfriando devido à contínua perda de calor para o espaço. O resfriamento possibilitou a formação de uma fina camada de material rochoso sólido em torno do planeta, a <mark class="highlight-blue_background"><strong>crosta terrestre</strong></mark>.<br/>→ no início a crosta era quente demais para permitir que se acumulasse água no estado líquido sobre ela, então ao atingir a superfície da Terra, toda a água voltava a evaporar para as camadas superiores mais frias da atmosfera onde se liquefazia (tempestades torrenciais caíram sem intervalos por milhões de anos seguidos)<br/>→ [provável surgimento dos primeiros seres vivos] a partir de determinado momento, a crosta terrestre já havia esfriado o suficiente para que água líquida pudesse se acumular em depressões, formando imensas áreas alagadas precursoras dos oceanos<br/></p><p id="19727285-e2c5-80d0-8014-c7cdc9514618" class="">
+</p></details></li></ul><ul id="19227285-e2c5-8014-9c70-db8ddf163dcf" class="toggle"><li><details open=""><summary>Como surgiu a vida na Terra?</summary><p id="19727285-e2c5-80c7-b0d5-c8ab79408f6c" class="">Para tentar explicar o surgimento dos seres vivos, surgem duas ideias opostas:</p><ul id="19727285-e2c5-8057-91af-c7cecdb71b84" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Abiogênese (Geração Espontânea):</strong></mark> alguns tipos de seres vivos podiam ser gerados espontaneamente a partir da matéria sem vida.<br/>→ 1668 Francesco Redi foi um dos primeiros a questionar a abiogênese<br/>→ 1674: Antonie van Leeuwenhoek descobre os microrganismos, retomando a credibilidade da abiogênese (uma vez que era difícil imaginar seres que estão em quase todos os lugares e que são microscópicos pudessem surgir por meio da reprodução)<br/>→ 1765: Lazzaro Spallanzani realizou uma série experimentos para refutar a abiogênese<br/>→ 1861: Louis Pasteur finalmente refuta essa ideia<br/></li></ul><ul id="19727285-e2c5-80e8-9b82-efc7de807aaa" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue_background"><strong>Biogênese:</strong></mark> organismos vivos só se originam de outros organismos preexistentes.<br/>→ teoria atualmente aceita pela ciência<br/></li></ul><p id="19727285-e2c5-802f-ba97-f537549c76a1" class="">
+</p><ul id="19727285-e2c5-80f0-b6b3-dff43d6cf7ea" class="toggle"><li><details open=""><summary>O experimento de Redi</summary><p id="19727285-e2c5-8007-9f74-d895dd6ee672" class="">Na época, muitos acreditavam que os seres vermiformes vistos em cadáveres de pessoas e de animais surgiam por transformação espontânea de carne em putrefação.</p><p id="19727285-e2c5-80c8-9305-eb0ab1c61ea1" class="">O médico italiano Francesco Redi não concordava com essa ideia e formulou a hipótese de que “vermes” eram estágios imaturos (larvas) do ciclo de vida de moscas. Redi acreditava que as larvas nasciam dos ovos colocados por moscas na carne.</p><p id="19727285-e2c5-80e9-82c3-c3f109532650" class="">
+</p><hr id="19727285-e2c5-800c-9b71-f484eb638427"/><p id="19727285-e2c5-80bb-9cb7-cbd6a3c5e520" class="">
+</p><p id="19727285-e2c5-803f-bdf7-cd738e83bfaf" class="">Para testar sua hipótese, Redi realizou o seguinte experimento:</p><figure id="19727285-e2c5-8073-8939-e5a80b5c5c5b" class="image"><a href="Biologia%2019227285e2c580b4a40acb53ceb83677/dbc783e5-c470-456c-a5a9-7c517a7bd72b.png"><img style="width:710px" src="Biologia%2019227285e2c580b4a40acb53ceb83677/dbc783e5-c470-456c-a5a9-7c517a7bd72b.png"/></a></figure><p id="19727285-e2c5-80d6-8e65-db79987f5031" class="">Distribuiu animais mortos em diversos frascos de boca larga, vedando alguns deles com uma faze muito fina e deixando outros abertos. Neste últimos, nos quais as moscas podiam entrar e sair livremente, logo surgiram seres vermiformes. Nos fracos tapados com gaze, que impedia a entrada das moscas, não apareceu nenhuma larva mesmo passados muitos dias.<br/>→ a hipótese foi testada, confirmada e aceita<br/></p><p id="19727285-e2c5-8073-b450-eb608f238696" class="">
+</p></details></li></ul><ul id="19727285-e2c5-80dd-a903-da84bdea67e1" class="toggle"><li><details open=""><summary>Needham <em>versus</em> Spallanzani</summary></details></li></ul><ul id="19727285-e2c5-8035-979a-eacd45540467" class="toggle"><li><details open=""><summary>Pasteur e a derrubada da abiogênese</summary></details></li></ul><p id="19727285-e2c5-8079-856d-f22ba3dd5b2e" class="">
+</p></details></li></ul><ul id="19227285-e2c5-806a-87d4-dff9cfb21abd" class="toggle"><li><details open=""><summary>Ideias modernas sobre a origem da vida</summary></details></li></ul><p id="19227285-e2c5-80a2-ae8d-d5a07e083947" class="">
+</p></details></li></ul><ul id="19227285-e2c5-803b-bb14-dbc84e072f80" class="toggle"><li><details open=""><summary>Capítulo 3: Bases moleculares da vida (Bioquímica)</summary><p id="19227285-e2c5-80c2-b925-d167f84349af" class="">A massa dos seres vivos é composta aproximadamente por:</p><ul id="19727285-e2c5-8095-815b-dc585666365f" class="bulleted-list"><li style="list-style-type:disc">Substâncias Inorgânicas<ul id="19727285-e2c5-802b-930e-f3cc47ab6733" class="bulleted-list"><li style="list-style-type:circle">(75% - 85%) Água</li></ul><ul id="19727285-e2c5-805a-92c8-e2f2945cfc05" class="bulleted-list"><li style="list-style-type:circle">1% Sais minerais</li></ul></li></ul><ul id="19727285-e2c5-8068-aece-e03d5e0b3923" class="bulleted-list"><li style="list-style-type:disc">Substâncias Orgânicas (CHONPS)<ul id="19727285-e2c5-801e-bfbf-d7df2568a94c" class="bulleted-list"><li style="list-style-type:circle">(10% - 15%) Proteínas</li></ul><ul id="19727285-e2c5-8069-a485-c3dcc7deac6a" class="bulleted-list"><li style="list-style-type:circle">(2% - 3%) Lipídios</li></ul><ul id="19727285-e2c5-8035-9274-c239f0bf45b5" class="bulleted-list"><li style="list-style-type:circle">1% Glicídios (Carboidratos)</li></ul><ul id="19727285-e2c5-80aa-abbd-e1925fc473c0" class="bulleted-list"><li style="list-style-type:circle">1% Ácidos nucleicos</li></ul></li></ul><p id="19727285-e2c5-80ad-aa08-c764baf55c90" class="">
+</p><hr id="19727285-e2c5-80ba-91ce-f57cb76e103f"/><h2 id="19727285-e2c5-8017-846f-d337299f916e" class=""><mark class="highlight-teal"><mark class="highlight-default_background"><strong>Substâncias Inorgânicas</strong></mark></mark></h2><ul id="19227285-e2c5-8005-b88d-d14f1a9a824b" class="toggle"><li><details open=""><summary>Água</summary><p id="19727285-e2c5-80fe-ad1a-fc7827433fd1" class="">imagem da água</p><p id="19727285-e2c5-80db-a616-d12952e92f12" class="">
+</p></details></li></ul><ul id="19727285-e2c5-8000-b1b5-f8ac019a2f6c" class="toggle"><li><details open=""><summary>Sais minerais</summary><p id="19727285-e2c5-8014-bd02-f2465473713b" class="">Sais minerais são substâncias inorgânicas formadas por íons. A falta de certos minerais pode afetar seriamente o metabolismo e até mesmo causar a morte.</p><p id="19727285-e2c5-8035-baf6-d3f482835870" class="">
+</p><p id="19727285-e2c5-8069-9943-cf893f7d7dc4" class="">Exemplos de Sais minerais e principais funções:</p><ul id="19727285-e2c5-80fc-a62e-de36588bfefc" class="bulleted-list"><li style="list-style-type:disc">Íon Cálcio <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">a</mi></mrow><msup><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><annotation encoding="application/x-tex">\big(\ce{Ca^{2+}}\big)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2373em;vertical-align:-0.35em;"></span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord"><span class="mord mathrm">Ca</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8873em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span><span class="mord"><span class="delimsizing size1">)</span></span></span></span></span></span><span>﻿</span></span>: participa de reações de coagulação do sangue e da contração muscular.<br/>→ é componente fundamental dos ossos.<br/></li></ul><ul id="19727285-e2c5-808a-bf3d-c11250f8e3aa" class="bulleted-list"><li style="list-style-type:disc">Íons Sódio <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">a</mi></mrow><msup><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mo lspace="0em" rspace="0em">+</mo></msup></mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><annotation encoding="application/x-tex">\big(\ce{Na^+}\big)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord"><span class="mord mathrm">Na</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8446em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span><span class="mord"><span class="delimsizing size1">)</span></span></span></span></span></span><span>﻿</span></span> e Potássio <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mrow><mi mathvariant="normal">K</mi><msup><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mo lspace="0em" rspace="0em">+</mo></msup></mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><annotation encoding="application/x-tex">\big(\ce{K^+}\big)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2em;vertical-align:-0.35em;"></span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathrm">K</span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8446em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span><span class="mord"><span class="delimsizing size1">)</span></span></span></span></span></span><span>﻿</span></span>: responsáveis pela atuação das células nervosas.</li></ul><ul id="19727285-e2c5-80c9-9096-f49f29f9582f" class="bulleted-list"><li style="list-style-type:disc">Íons Fosfato <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mrow><mrow><mi mathvariant="normal">P</mi><mi mathvariant="normal">O</mi></mrow><msubsup><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>4</mn></mpadded><mrow><mn>3</mn><mo>−</mo></mrow></msubsup></mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><annotation encoding="application/x-tex">\big(\ce{PO^{3-}_4}\big)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2373em;vertical-align:-0.35em;"></span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord"><span class="mord mathrm">PO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8873em;"><span style="top:-2.453em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span><span class="mord"><span class="delimsizing size1">)</span></span></span></span></span></span><span>﻿</span></span> e Carbonato <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">O</mi></mrow><msubsup><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mpadded height="0px"><mn>3</mn></mpadded><mrow><mn>2</mn><mo>−</mo></mrow></msubsup></mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><annotation encoding="application/x-tex">\big(\ce{CO^{2-}_3}\big)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2373em;vertical-align:-0.35em;"></span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord"><span class="mord mathrm">CO</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8873em;"><span style="top:-2.453em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0em;"><span style="top:-2.7em;"><span class="pstrut" style="height:2.7em;"></span><span><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">−</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span><span class="mord"><span class="delimsizing size1">)</span></span></span></span></span></span><span>﻿</span></span>: importantes para o controle da acidez do ambiente interno das células.<br/>→ muitas reações químicas somente ocorrem se o potencial hidrogeniônico (pH) for favorável.<br/></li></ul><ul id="19727285-e2c5-8003-a1ee-e017de40b677" class="bulleted-list"><li style="list-style-type:disc">Íons Magnésio <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mrow><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">g</mi></mrow><msup><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><annotation encoding="application/x-tex">\big(\ce{Mg^{2+}}\big)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2373em;vertical-align:-0.35em;"></span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord"><span class="mord mathrm" style="margin-right:0.01389em;">Mg</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8873em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span><span class="mord"><span class="delimsizing size1">)</span></span></span></span></span></span><span>﻿</span></span>, Manganês <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mrow><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">n</mi></mrow><msup><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><annotation encoding="application/x-tex">\big(\ce{Mn^{2+}}\big)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2373em;vertical-align:-0.35em;"></span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord"><span class="mord mathrm">Mn</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8873em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span><span class="mord"><span class="delimsizing size1">)</span></span></span></span></span></span><span>﻿</span></span> e Zinco <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">(</mo><mrow><mrow><mi mathvariant="normal">Z</mi><mi mathvariant="normal">n</mi></mrow><msup><mpadded width="0px"><mphantom><mi>X</mi></mphantom></mpadded><mrow><mn>2</mn><mo>+</mo></mrow></msup></mrow><mo fence="false" stretchy="true" minsize="1.2em" maxsize="1.2em">)</mo></mrow><annotation encoding="application/x-tex">\big(\ce{Zn^{2+}}\big)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2373em;vertical-align:-0.35em;"></span><span class="mord"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord"><span class="mord mathrm">Zn</span></span><span class="mord"><span class="mord"><span class="mord rlap"><span class="inner"><span class="mord" style="color:transparent;"><span class="mord mathnormal" style="margin-right:0.07847em;color:transparent;">X</span></span></span><span class="fix"></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8873em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">+</span></span></span></span></span></span></span></span></span></span><span class="mord"><span class="delimsizing size1">)</span></span></span></span></span></span><span>﻿</span></span>: participam de reações químicas vitais às células.</li></ul></details></li></ul><p id="19727285-e2c5-804a-8591-fe8f94f42e3d" class="">
+</p><hr id="19727285-e2c5-8076-85d4-ed95716a53a5"/><h2 id="19727285-e2c5-802c-b4a7-f6a3a0634d10" class=""><mark class="highlight-teal"><mark class="highlight-default_background"><strong>Substâncias Orgânicas</strong></mark></mark></h2><ul id="19227285-e2c5-803c-88c5-c3e24438c1ca" class="toggle"><li><details open=""><summary>Glicídios</summary></details></li></ul><ul id="19727285-e2c5-8080-8b5e-c6f2dee0b52a" class="toggle"><li><details open=""><summary>Lipídios</summary></details></li></ul><ul id="19227285-e2c5-80ea-993d-c9b9609d8fb3" class="toggle"><li><details open=""><summary>Proteínas</summary></details></li></ul><ul id="19727285-e2c5-8050-9e52-f9277aebb7e8" class="toggle"><li><details open=""><summary>Vitamínas</summary></details></li></ul><ul id="19727285-e2c5-8069-a5bc-d57a46b1df10" class="toggle"><li><details open=""><summary>Ácidos nucleícos</summary></details></li></ul><p id="19227285-e2c5-801e-9b27-e4e2cc16d335" class="">
+</p></details></li></ul><p id="19227285-e2c5-80f0-9625-f4345206a930" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
